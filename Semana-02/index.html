@@ -7,9 +7,9 @@
         <title>Trackgenix</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
+    <body style="width: 1440px;">
         <header>
-            <div>
+            <div id="header-top">
                 <div>
                     Trackgenix by GigaTech Software Solutions SA
                 </div>
@@ -31,23 +31,26 @@
                     </a>
                 </div>
             </div>
-            <div>
-                <h1>
-                    Hi, I'm Trackgenix by GigaTech Software Solutions SA
-                </h1>
-                <h2>
-                    A practical and easy to use system 
-                </h2>
-                <h3>
-                    Trackgenix is a web system which facilitates the registration of hours worked by each employee in each project and work team. 
-                </h3>
-                <img src="assets/header-img.png" alt="header image"> 
-                <button id="btn-learn-more">
-                    Learn More
-                </button>
+            <div class="header-presentation">
+                <div class="header-left-section">
+                    <h1>
+                        Hi, I'm Trackgenix by GigaTech Software Solutions SA
+                    </h1>
+                    <h4>
+                        A practical and easy to use system
+                    </h4>
+                    <h5>
+                        Trackgenix is a web system which facilitates the registration of hours worked by each employee in each project and work team.
+                    </h5>
+                    <button class="btn-more" id="btn-learn-more">
+                        Learn More
+                    </button>
+                </div>
+                <img src="assets/header-img.png" alt="header image" id="header-img"> 
             </div>
         </header>
         <aside>
+            <h2>Menu</h2>
             <nav>
                 <ul>
                     <li>
@@ -102,7 +105,52 @@
             </article>
         </aside>
         <main>
-            <section>
+            <section id="sec-reasons">
+                <h2>
+                    Why Trackgenix?
+                </h2>
+                <div>
+                    <h3>
+                        Productivity booster
+                    </h3>
+                    <p>
+                        Perform twice as many tasks in half time
+                    </p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/206/206494.png" alt="recording hours" width="50px">
+                    <button class="btn-more">More</button>
+                </div>
+                <div>
+                    <h3>
+                        Decision making
+                    </h3>
+                    <p>
+                        More information means better decisions
+                    </p>
+                    <img src="http://simpleicon.com/wp-content/uploads/light-bulb-7.png" width="50px" alt="Reports">
+                    <button class="btn-more">More</button>
+                </div>
+                <div>
+                    <h3>
+                        Work traceability
+                    </h3>
+                    <p>
+                        Tracks the job process automatically
+                    </p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/35/35920.png" alt="Resource management" width="50px">
+                    <button class="btn-more">More</button>
+                </div>
+                <div>
+                    <h3>
+                        Leaderteam and team managment
+                    </h3>
+                    <p>
+                        Makes the leaderteam have all the information
+                    </p>
+                    <img src="https://www.kindpng.com/picc/m/348-3480325_5a1de65ca1dd4-leadericon-thumb-market-leader-icon-noun-project.png" alt="Multiple roles" width="50px">
+                    <button class="btn-more">More</button>
+                </div>
+            </section>
+            <section id="sec-functions">
                 <h2>
                     Functions
                 </h2>
@@ -131,52 +179,7 @@
                     <img src="https://icon-library.com/images/people-icon/people-icon-9.jpg" alt="Multiple roles" width="50px">
                 </div>
             </section>
-            <section>
-                <h2>
-                    Why Trackgenix?
-                </h2>
-                <div>
-                    <h3>
-                        Productivity booster
-                    </h3>
-                    <p>
-                        Perform twice as many tasks in half time
-                    </p>
-                    <img src="https://cdn-icons-png.flaticon.com/512/206/206494.png" alt="recording hours" width="50px">
-                    <button>More</button>
-                </div>
-                <div>
-                    <h3>
-                        Decision making
-                    </h3>
-                    <p>
-                        More information means better decisions
-                    </p>
-                    <img src="http://simpleicon.com/wp-content/uploads/light-bulb-7.png" width="50px" alt="Reports">
-                    <button>More</button>
-                </div>
-                <div>
-                    <h3>
-                        Work traceability
-                    </h3>
-                    <p>
-                        Tracks the job process automatically
-                    </p>
-                    <img src="https://cdn-icons-png.flaticon.com/512/35/35920.png" alt="Resource management" width="50px">
-                    <button>More</button>
-                </div>
-                <div>
-                    <h3>
-                        Leaderteam and team managment
-                    </h3>
-                    <p>
-                        Makes the leaderteam have all the information
-                    </p>
-                    <img src="https://www.kindpng.com/picc/m/348-3480325_5a1de65ca1dd4-leadericon-thumb-market-leader-icon-noun-project.png" alt="Multiple roles" width="50px">
-                    <button>More</button>
-                </div>
-            </section>
-            <section>
+            <section id="sec-form">
                 <h2>
                     Get some info
                 </h2>
@@ -222,7 +225,7 @@
                     </div>
                 </form>
             </section>
-            <section>
+            <section id="sec-history">
                 <h2>
                     History of the business
                 </h2>
@@ -248,7 +251,7 @@
                     <img src="assets/history_img_2.jpg" alt="history_img_1">
                 </div>
             </section>
-            <section>
+            <section id="sec-list">
                 <div>
                     <h4>
                         Our products
