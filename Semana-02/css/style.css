@@ -7,6 +7,15 @@
     color: rgba(55, 56, 103, 1);
 }
 
+.icon-link {
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+}
+
+i {
+    color: #5D5D5D;
+}
 
 header, main, footer {
     position: relative;
@@ -24,11 +33,13 @@ header {
 header div h4 {
     font-size: 20px;
     font-weight: 400;
+    display: inline-block;
 }
 
 header div h5 {
     font-size: 14px;
     font-weight: 500;
+    display: inline-block;
 }
 
 aside {
@@ -58,8 +69,6 @@ section {
     margin-top: 40px;
 }
 
-
-
 .header-left-section {
     display: inline-block;
     margin-top: 30px;
@@ -87,19 +96,27 @@ div.header-left-section h4, div.header-left-section h5, div.header-left-section 
     cursor: pointer;
 }
 
+.header-presentation {
+
+}
+
 .header-left-section {
     display: inline-block;
     left: 0;
+    width: 50%;
 }
+
 
 #header-img {
     display: inline-block;
     right: 0;
+    top: 20px;
 }
 
 #sec-reasons {
     margin-top: 0px;
 }
+
 
 .btn-more:hover {
     background-color: rgba(241, 51, 18, 1); 
@@ -107,4 +124,7 @@ div.header-left-section h4, div.header-left-section h5, div.header-left-section 
     transition: 0.15s;
 }
 
-
+.icon-link:hover {
+    color: rgba(241, 51, 18, 1);
+    transition: 0.15s;
+}
