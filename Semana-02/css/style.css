@@ -27,8 +27,7 @@ header, main, footer {
     display: inline-block;
     left: 340px;
     margin-left: 60px;
-    width: 82%;
-    padding-right: 0px;
+    width: 77%;
 }
 
 header {
@@ -137,7 +136,7 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 #header-top div {
     display: inline-block;
     position: relative;
-    left: 980px;
+    left: 65%;
 }
 
 #header-presentation {
@@ -154,8 +153,36 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     margin-top: 0px;
 }
 
+#sec-reasons h2 {
+    display: block;
+    width: max-content;
+}
+
+#sec-reasons div {
+    display: inline-block;
+    position: relative;
+    width: 49%;
+    margin-bottom: 40px;
+}
+
+#sec-reasons div div {
+    position: absolute;
+    top: 20%;
+    margin-left: 20px;
+}
+
+#sec-reasons div div h3 {
+    margin-bottom: 20px;
+}
+
+#sec-reasons div div p {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
 #sec-reasons div img {
-    width: 100px;
+    display: inline-block;
+    width: 160px;
 }
 
 .btn-more:hover {
