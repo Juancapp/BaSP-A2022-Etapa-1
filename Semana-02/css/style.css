@@ -19,6 +19,7 @@ a {
 
 i {
     color: #5D5D5D;
+    cursor: pointer;
 }
 
 header, main, footer {
@@ -109,8 +110,9 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     margin-top: 40px;
 }
 
-#header-top div {
-    display: inline-block;
+
+#header-top div i {
+    margin-left: 2px;
 }
 
 #header-left-section {
@@ -133,8 +135,9 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 #header-top div {
+    display: inline-block;
     position: relative;
-    left: 990px;
+    left: 980px;
 }
 
 #header-presentation {
@@ -151,6 +154,9 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     margin-top: 0px;
 }
 
+#sec-reasons div img {
+    width: 100px;
+}
 
 .btn-more:hover {
     background-color: rgba(241, 51, 18, 1); 
@@ -164,4 +170,4 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 
-/* git commit -m "BaSP-W02-2022:
+/* git commit -m "BaSP-W02-2022: */
