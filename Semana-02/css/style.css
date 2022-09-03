@@ -291,4 +291,10 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     padding: 5px 5px;
 }
 
+#sec-history img {
+    width: 300px;
+}
 
+#sec-history h4 {
+    margin-bottom: 40px;
+}
