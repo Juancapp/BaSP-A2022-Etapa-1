@@ -27,15 +27,13 @@ header, main, footer {
     display: inline-block;
     width: 100%;
     left: 300px;
-    margin-left: 0px;
-    width: 77%;
+    padding: 0 60px;
+    width: 70%;
 }
 
 header {
-    border-bottom: 2px rgba(55, 56, 103, 1) solid;
-    padding-top: 15px;
+    padding-top: 40px;
     padding-bottom: 30px;
-    padding-right: 0px;
 }
 
 header div div h4 {
@@ -53,7 +51,7 @@ header div h5 {
 aside {
     float: left;
     position: fixed;
-    width: 18%;
+    width: 20%;
     height: 100%;
     box-sizing: content-box;
     background-color: #AACE9B;
@@ -185,6 +183,11 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     height: 260px;
 }
 
+#sec-reasons {
+    border-top: 2px rgba(55, 56, 103, 1) solid;
+    padding-top: 40px;
+}
+
 #sec-reasons div {
     display: inline-block;
     position: relative;
@@ -217,13 +220,13 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     position: relative;
     width: min-content;
     margin-bottom: 40px;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 #sec-functions div img {
     display: inline-block;
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     margin-bottom: 20px;
 }
 
@@ -293,18 +296,23 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     padding: 5px 5px;
 }
 
-#sec-history div {
-    margin-left: 40px;
-}
-
-#sec-history div img {
+#sec-history div p span img {
     width: 300px;
     display: inline;
 }
 
-#sec-history div p {
-    margin-bottom: 70px;
-    display: inline;
+.image-left {
+    float: left;
+    padding: 0 24px 16px 0;
+}
+
+.image-right {
+    float: right;
+    padding: 0 0 16px 24px;
+}
+
+#sec-history div p:first-of-type{
+    margin-bottom: 50px;
 }
 
 #sec-history h4 {
