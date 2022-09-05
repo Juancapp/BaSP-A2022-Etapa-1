@@ -62,9 +62,12 @@ aside {
 aside i {
     color: #373867;
     cursor:default;
+    margin: 0 2px;
+    padding-left: 10px;
+    margin-top: 12px;
 }
 
-aside nav ul li a {
+aside nav ul li {
     display: block;
     font-size: 18px;
     border-bottom: 1px #4d4e6d solid;
@@ -72,8 +75,12 @@ aside nav ul li a {
     padding-top: 15px;
 }
 
-aside nav ul li:last-child a {
+aside nav ul li:last-child {
     padding-bottom: 60px;
+}
+
+aside nav ul li a {
+    padding: 0 10px;
 }
 
 nav {
@@ -102,10 +109,6 @@ article div div {
 article div div:nth-child(2) {
     padding-bottom: 32px;
     padding-top: 16px;
-}
-
-article div div i {
-    margin: 0 2px;
 }
 
 article div div p {
@@ -174,6 +177,10 @@ footer {
 
 footer div {
     margin-top: 10px;
+}
+
+footer p {
+    margin-top: 20px;
 }
 
 .btn-more {
