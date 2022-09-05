@@ -26,7 +26,7 @@ header, main, footer {
     position: relative;
     display: inline-block;
     width: 100%;
-    left: 300px;
+    left: 291px;
     padding: 0 60px;
     width: 70%;
 }
@@ -112,6 +112,14 @@ input[type="text"], input[type="email"] {
     padding: 0 10px;
 }
 
+footer {
+    margin: 30px 0;
+    text-align: center;
+}
+
+footer div {
+    margin-top: 5px;
+}
 
 .btn-more {
     border: 1px rgba(241, 51, 18, 1) solid;
@@ -309,12 +317,32 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 .image-right {
     float: right;
     padding: 0 0 16px 24px;
+    margin-bottom: 10px;
 }
 
 #sec-history div p:first-of-type{
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 
 #sec-history h4 {
     margin-bottom: 40px;
+    text-align: left;
+}
+
+#sec-list {
+    text-align: center;
+}
+
+#sec-list div {
+    display: inline-block;
+}
+
+#sec-list div:nth-child(2) {
+    margin: 0 200px;
+}
+
+
+#sec-list div h4 {
+    margin-bottom: 5px;
+    text-align: center;
 }
