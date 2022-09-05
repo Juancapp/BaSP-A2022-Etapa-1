@@ -20,26 +20,11 @@ i {
     cursor: pointer;
 }
 
-header, main, footer {
-    float: right;
-    padding: 0 2%;
-    width: 72%;
-    line-height: 1.4;
-}
-
-header {
-    padding-top: 2%;
-    padding-bottom: 30px;
-}
-
-header div div h4 {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-header div h5 {
-    font-size: 14px;
-    font-weight: 500;
+h2 {
+    width: max-content;
+    margin-bottom: 60px;
+    border-bottom: #FF3E1D 2px solid;
+    font-size: 30px;
 }
 
 aside {
@@ -82,7 +67,7 @@ aside nav ul li a:hover {
     transition: 0.2s;
 }
 
-nav {
+aside nav {
     margin-bottom: 60px;
 }
 
@@ -94,38 +79,51 @@ aside article h2:last-of-type {
     margin-bottom: 24px;
 }
 
-article div {
+aside article div {
     margin-top: 40px;
 }
 
-article div:first-of-type {
+aside article div:first-of-type {
     margin-top: 0px;
 }
 
-
-article div div {
+aside article div div {
     margin-top: initial;
     padding-top: 12px;
     padding-bottom: 16px;
     border-bottom: 1px #4d4e6d solid;
 }
 
-article div div:nth-child(2) {
+aside article div div:nth-child(2) {
     padding-bottom: 32px;
     padding-top: 16px;
 }
 
-article div div p {
+aside article div div p {
     float: right;
     width: 230px;
 }
 
+header, main, footer {
+    float: right;
+    padding: 0 2%;
+    width: 72%;
+    line-height: 1.4;
+}
 
-h2 {
-    width: max-content;
-    margin-bottom: 60px;
-    border-bottom: #FF3E1D 2px solid;
-    font-size: 30px;
+header {
+    padding-top: 2%;
+    padding-bottom: 30px;
+}
+
+header div div h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header div h5 {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 header div button {
@@ -145,6 +143,20 @@ label {
     font-weight: bold;
 }
 
+input {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 50%;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px #373867 solid;
+    border-radius: 5px;
+    color: #373867;
+    font-weight: 500;
+}
+
 select {
     padding: 5px;
     margin-bottom: 20px;
@@ -158,18 +170,13 @@ option {
     font-weight: 500;
 }
 
-input {
-    margin-bottom: 20px;
-}
-
-input[type="text"], input[type="email"] {
-    width: 50%;
-    height: 35px;
-    padding: 0 10px;
-    border: 1px #373867 solid;
+form div textarea {
+    width: 51%;
+    height: 100px;
+    padding: 5px 5px;
+    border: #373867 1px solid;
     border-radius: 5px;
-    color: #373867;
-    font-weight: 500;
+    resize: none;
 }
 
 footer {
@@ -247,7 +254,6 @@ div#header-left-section h1 {
 div#header-left-section h4, div#header-left-section h5, div#header-left-section button {
     margin-top: 40px;
 }
-
 
 #header-top div i {
     margin-left: 2px;
@@ -363,15 +369,6 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 #btn-reset:hover {
     background-color: #FF2500;
     transition: 0.15s;
-}
-
-#message {
-    width: 51%;
-    height: 100px;
-    padding: 5px 5px;
-    border: #373867 1px solid;
-    border-radius: 5px;
-    resize: none;
 }
 
 #sec-history div p span img {
