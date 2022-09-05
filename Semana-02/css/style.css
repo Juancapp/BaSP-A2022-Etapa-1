@@ -26,7 +26,7 @@ header, main, footer {
     position: relative;
     display: inline-block;
     width: 100%;
-    left: 291px;
+    left: 22.5%;
     padding: 0 60px;
     width: 70%;
 }
@@ -56,8 +56,63 @@ aside {
     box-sizing: content-box;
     background-color: #AACE9B;
     top: 0;
-    padding: 5px;
+    padding: 20px 25px;
 }
+
+aside i {
+    color: #373867;
+    cursor:default;
+}
+
+aside nav ul li a {
+    display: block;
+    font-size: 18px;
+    border-bottom: 1px #4d4e6d solid;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+aside nav ul li:last-child a {
+    padding-bottom: 60px;
+}
+
+nav {
+    margin-bottom: 60px;
+}
+
+aside article div p {
+    font-weight: 500;
+}
+
+aside article h2:last-of-type {
+    margin-bottom: -16px;
+}
+
+article div {
+    margin-top: 40px;
+}
+
+article div div {
+    margin-top: initial;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px #4d4e6d solid;
+}
+
+article div div:nth-child(2) {
+    padding-bottom: 32px;
+    padding-top: 16px;
+}
+
+article div div i {
+    margin: 0 2px;
+}
+
+article div div p {
+    float: right;
+    width: 230px;
+}
+
 
 h2 {
     font-size: 30px;
@@ -118,7 +173,7 @@ footer {
 }
 
 footer div {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .btn-more {
@@ -329,8 +384,14 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     text-align: left;
 }
 
+#sec-history div h4:last-of-type {
+    margin-top: 100px;
+}
+
 #sec-list {
+    margin-top: 0;
     text-align: center;
+    padding-top: 40px;
 }
 
 #sec-list div {
