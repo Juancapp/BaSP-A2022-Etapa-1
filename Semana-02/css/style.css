@@ -8,8 +8,6 @@
 }
 
 body {
-    top: 0;
-    left: 0;
     overflow-x: hidden;
 }
 
@@ -23,57 +21,50 @@ i {
 }
 
 header, main, footer {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    left: 22.5%;
-    padding: 0 60px;
-    width: 70%;
+    float: right;
+    padding: 0 2%;
+    width: 72%;
     line-height: 1.4;
 }
 
 header {
-    padding-top: 40px;
+    padding-top: 2%;
     padding-bottom: 30px;
 }
 
 header div div h4 {
     font-size: 20px;
     font-weight: 400;
-    display: inline-block;
 }
 
 header div h5 {
     font-size: 14px;
     font-weight: 500;
-    display: inline-block;
 }
 
 aside {
-    float: left;
     position: fixed;
+    padding: 20px 25px;
     width: 20%;
     height: 100%;
-    box-sizing: content-box;
     background-color: #AACE9B;
-    top: 0;
-    padding: 20px 25px;
 }
 
 aside i {
-    color: #373867;
-    cursor:default;
-    margin: 0 2px;
+    display: inline-block;
     padding-left: 10px;
+    margin: 0 2px;
     margin-top: 12px;
+    color: #373867;
+    cursor: default;
 }
 
 aside nav ul li {
     display: block;
-    font-size: 18px;
-    border-bottom: 1px #4d4e6d solid;
     padding-bottom: 15px;
     padding-top: 15px;
+    border-bottom: 1px #4d4e6d solid;
+    font-size: 18px;
 }
 
 aside nav ul li:last-child {
@@ -82,8 +73,8 @@ aside nav ul li:last-child {
 
 aside nav ul li a {
     padding: 13px 10px;
-    cursor: pointer;
     height: 49px;
+    cursor: pointer;
 }
 
 aside nav ul li a:hover {
@@ -100,12 +91,17 @@ aside article div p {
 }
 
 aside article h2:last-of-type {
-    margin-bottom: -16px;
+    margin-bottom: 24px;
 }
 
 article div {
     margin-top: 40px;
 }
+
+article div:first-of-type {
+    margin-top: 0px;
+}
+
 
 article div div {
     margin-top: initial;
@@ -126,11 +122,10 @@ article div div p {
 
 
 h2 {
-    font-size: 30px;
-    border-bottom: #FF3E1D 2px solid;
-    display: block;
     width: max-content;
     margin-bottom: 60px;
+    border-bottom: #FF3E1D 2px solid;
+    font-size: 30px;
 }
 
 header div button {
@@ -139,25 +134,24 @@ header div button {
 }
 
 section {
-    width: 100%;
-    border-bottom: 2px rgba(55, 56, 103, 1) solid;
-    padding-bottom: 40px;
     margin-top: 60px;
+    padding-bottom: 40px;
+    border-bottom: 2px rgba(55, 56, 103, 1) solid;
 }
 
 label {
-    font-weight: bold;
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 select {
+    padding: 5px;
+    margin-bottom: 20px;
     border: transparent 1px solid;
     border-bottom: #373867 1px solid;
     font-weight: 500;
-    margin-bottom: 20px;
     font-size: 16px;
-    padding: 5px;
 }
 
 option {
@@ -169,13 +163,13 @@ input {
 }
 
 input[type="text"], input[type="email"] {
+    width: 50%;
+    height: 35px;
+    padding: 0 10px;
     border: 1px #373867 solid;
     border-radius: 5px;
-    width: 500px;
-    height: 35px;
     color: #373867;
     font-weight: 500;
-    padding: 0 10px;
 }
 
 footer {
@@ -192,11 +186,10 @@ footer p {
 }
 
 .btn-more {
-    border: 1px rgba(241, 51, 18, 1) solid;
-    text-align: center;
-    border-radius: 5px;
-    background-color: white;
     padding: 10px 24px;
+    background-color: white;
+    border: 1px rgba(241, 51, 18, 1) solid;
+    border-radius: 5px;
     color: rgba(241, 51, 18, 1);
     text-transform: uppercase;
     font-size: 12px;
@@ -204,9 +197,41 @@ footer p {
     cursor: pointer;
 }
 
+.btn-more:hover {
+    background-color: rgba(241, 51, 18, 1); 
+    color: rgba(55, 56, 103, 1) ;
+    transition: 0.15s;
+}
+
 .link-icon {
     width: 32px;
     height: 32px;
+}
+
+.btn-form {
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #373867;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-left {
+    float: left;
+    padding: 0 24px 16px 0;
+}
+
+.image-right {
+    float: right;
+    padding: 30px 0 16px 24px;
+    margin-bottom: 10px;
+}
+
+.icon:hover {
+    color: rgba(241, 51, 18, 1);
+    transition: 0.15s;
 }
 
 #header-left-section {
@@ -237,10 +262,10 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 #header-top {
-    margin-bottom: 20px;
     width: 100%;
-    border-bottom: #FF3E1D 2px solid;
+    margin-bottom: 20px;
     padding-bottom: 10px;
+    border-bottom: #FF3E1D 2px solid;
 }
 
 #header-top > p {
@@ -258,25 +283,21 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 #header-img {
-    display: inline-block;
-    height: 260px;
     vertical-align: top;
 }
 
 #sec-reasons {
-    border-top: 2px rgba(55, 56, 103, 1) solid;
     padding-top: 40px;
+    border-top: 2px rgba(55, 56, 103, 1) solid;
 }
 
 #sec-reasons div {
     display: inline-block;
-    position: relative;
     width: 49%;
     margin-bottom: 40px;
 }
 
 #sec-reasons div div {
-    position: absolute;
     top: 20%;
     margin-left: 20px;
 }
@@ -287,6 +308,7 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 
 #sec-reasons div div p {
     display: inline-block;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -322,40 +344,15 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 #btn-send {
-    background: #AACE9B;
     width: 110px;
     height: 33px;
-    border: 1px solid #373867;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 5px;
+    background: #AACE9B;
 }
 
 #btn-reset {
-    background: #ee482b;
     width: 69.5px;
     height: 33px;
-    border: 1px solid #373867;
-    border-radius: 5px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 5px;
-}
-
-.btn-more:hover {
-    background-color: rgba(241, 51, 18, 1); 
-    color: rgba(55, 56, 103, 1) ;
-    transition: 0.15s;
-}
-
-.icon:hover {
-    color: rgba(241, 51, 18, 1);
-    transition: 0.15s;
+    background: #ee482b;
 }
 
 #btn-send:hover {
@@ -369,27 +366,16 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
 }
 
 #message {
-    resize: none;
-    width: 600px;
+    width: 51%;
     height: 100px;
+    padding: 5px 5px;
     border: #373867 1px solid;
     border-radius: 5px;
-    padding: 5px 5px;
+    resize: none;
 }
 
 #sec-history div p span img {
     width: 300px;
-}
-
-.image-left {
-    float: left;
-    padding: 0 24px 16px 0;
-}
-
-.image-right {
-    float: right;
-    padding: 30px 0 16px 24px;
-    margin-bottom: 10px;
 }
 
 #sec-history div p:first-of-type{
@@ -409,21 +395,20 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     margin-top: 20px;
 }
 
-
 #sec-list {
     margin-top: 0;
-    text-align: center;
     padding-top: 40px;
+    text-align: center;
 }
 
 #sec-list div {
     display: inline-block;
+    width: 10%;
 }
 
 #sec-list div:nth-child(2) {
-    margin: 0 200px;
+    margin: 0 20%;
 }
-
 
 #sec-list div h4 {
     margin-bottom: 12px;
@@ -434,3 +419,4 @@ div#header-left-section h4, div#header-left-section h5, div#header-left-section 
     line-height: 1.3;
     cursor: pointer;
 }
+
