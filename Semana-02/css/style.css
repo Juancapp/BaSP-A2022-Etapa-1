@@ -158,10 +158,9 @@ input[type="text"], input[type="email"] {
 }
 
 select {
-    padding: 5px;
     margin-bottom: 20px;
-    border: transparent 1px solid;
-    border-bottom: #373867 1px solid;
+    border: transparent 2px solid;
+    border-bottom: #4d4e6d 2px solid;
     font-weight: 500;
     font-size: 16px;
 }
