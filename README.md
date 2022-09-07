@@ -28,9 +28,9 @@ How to open:
 ### Week 02
 ```
         - Adding styles to the first week page.
-        - The CSS has been coded only for 1400x900px resolution. Not responsive. 
+        - The CSS has been coded on 1440x900px resolution. Not responsive. 
         - On this week I've added all the style of main page called "style.css". This file is inside "css" folder. 
-        - I've created a copy of the folder "Semana-01" called "Semana-02" witch contained a exact copy of the index.html but with the corresponding bugs fixes from last week. Also, I've modified some elements to make CSS implementation easier. 
+        - I've created a copy of the folder "Semana-01" called "Semana-02" witch contained a exact copy of the index.html but with the corresponding bugs fixes from last week. Also, I've modified some elements to SS implementation easier. 
         - I've added a reset.css to make the page more adaptative to different  browsers
         - Icon images of "assets" folder have been removed because I've replaced them by icons coming from https://fontawesome.com/.
         - I've priorized elements and ids selectors to to minimize the unnecessary use of classes. These have been used mainly to HTML components and very specific cases. 
@@ -40,7 +40,7 @@ How to open:
     How to open: 
         1- Access to the folder "Semana-02".
         2- Open the file "index.html" on your browser.
-        3- Make sure your browser display options are set to 1400x900px resolution.
+        3- Make sure your browser display options are set to 1440x900px resolution.
 ```
 
  _By Juan Andrés Cappuccio_ 
