@@ -111,21 +111,6 @@ aside article div div p {
     font-weight: 400;
 }
 
-header div div h4 {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-header div h5 {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-header div button {
-    width: 143px;
-    height: 34px;
-}
-
 section {
     margin-top: 60px;
     padding-bottom: 40px;
@@ -243,44 +228,6 @@ footer p {
     margin: 3%;
 }
 
-#sec-reasons {
-    padding-top: 40px;
-    border-top: 2px rgba(55, 56, 103, 1) solid;
-}
-
-#sec-reasons div {
-    display: inline-block;
-    width: 49%;
-    margin-bottom: 29px;
-}
-
-#sec-reasons div div {
-    top: 20%;
-    margin-left: 20px;
-}
-
-#sec-reasons div div h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: bolder;
-}
-
-#sec-reasons div:last-child div h3 {
-    margin-bottom: 8px;
-}
-
-#sec-reasons div div p {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-#sec-reasons div img {
-    display: inline-block;
-    width: 160px;
-    padding-top: 40px;
-}
-
 #sec-functions div {
     display: inline-block;
     position: relative;
@@ -386,4 +333,11 @@ footer p {
     }
 
     
+}
+
+@media (max-width:1024px) {
+
+    aside {
+        display: none;
+    }
 }

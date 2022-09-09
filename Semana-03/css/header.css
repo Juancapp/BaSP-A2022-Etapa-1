@@ -3,6 +3,8 @@ header {
     flex-direction: column;
     width: 100%;
     gap: 20px;
+    border-bottom: 2px rgba(55, 56, 103, 1) solid;
+    padding-bottom: 60px;
 }
 
 header div div h4 {
@@ -35,13 +37,8 @@ header div button {
 #header-left-section {
     display: flex;
     gap: 20px;
-    flex: 1 0 50% ;
     flex-direction: column;
     justify-content:space-around;
-}
-
-#header-img {
-    flex: 1 1 130px;
 }
 
 @media (max-width:769px) {
