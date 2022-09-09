@@ -1,0 +1,21 @@
+
+header {
+    flex-grow: 4;
+    padding-top: 2%;
+    padding-bottom: 30px;
+}
+
+header div div h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header div h5 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+header div button {
+    width: 143px;
+    height: 34px;
+}

@@ -40,7 +40,7 @@ How to open:
     How to open: 
         1- Access to the folder "Semana-02".
         2- Open the file "index.html" on your browser.
-        3- Make sure your browser display options are set to 1440x900px resolution.
+        3- Make sure your browser display options are set to 14400x900px resolution.
 ```
 
  _By Juan Andrés Cappuccio_ 
