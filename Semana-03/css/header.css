@@ -1,8 +1,8 @@
-
 header {
-    flex-grow: 4;
-    padding-top: 2%;
-    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
 }
 
 header div div h4 {
@@ -18,4 +18,37 @@ header div h5 {
 header div button {
     width: 143px;
     height: 34px;
+}
+
+#header-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-presentation {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#header-left-section {
+    display: flex;
+    gap: 20px;
+    flex: 1 0 50% ;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+#header-img {
+    flex: 1 1 130px;
+}
+
+@media (max-width:769px) {
+
+    aside, #header-top, #sec-functions {
+        display: none;
+    }
+
+    
 }
