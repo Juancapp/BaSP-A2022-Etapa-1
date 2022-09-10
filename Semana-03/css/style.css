@@ -20,6 +20,7 @@ a {
 
 p {
     font-weight: 300;
+    font-size: clamp(.7rem, 2.5vw, 1rem);
 }
 
 i {
@@ -29,9 +30,10 @@ i {
 
 h2 {
     width: max-content;
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
     border-bottom: #FF3E1D 2px solid;
     font-size: 30px;
+    font-size: clamp(1.7rem, 2.5vw, 1.875rem);
 }
 
 aside {
