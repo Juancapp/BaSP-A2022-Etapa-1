@@ -3,8 +3,6 @@ header {
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    border-bottom: 2px rgba(55, 56, 103, 1) solid;
-    padding-bottom: 60px;
 }
 
 header div div h4 {
