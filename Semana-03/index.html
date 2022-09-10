@@ -171,49 +171,51 @@
                     <h2>
                         Functions
                     </h2>
-                    <div>
-                        <img src="assets/functions-clock.png" alt="recording hours">
-                        <h3>
-                            Hours Log
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
-                            quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
-                        </p>
-                        <button class="btn-more">More</button>
-                    </div>
-                    <div>
-                        <img src="assets/functions-books.png" alt="Reports">
-                        <h3>
-                            Reports
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
-                            quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
-                        </p>
-                        <button class="btn-more">More</button>
-                    </div>
-                    <div>
-                        <img src="assets/functions-board.png" alt="Resource management">
-                        <h3>
-                            Resource management
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
-                            quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
-                        </p>
-                        <button class="btn-more">More</button>
-                    </div>
-                    <div>
-                        <img src="assets/functions-team.png" alt="Multiple roles">
-                        <h3>
-                            Multiple roles
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
-                            quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
-                        </p>
-                        <button class="btn-more">More</button>
+                    <div class="functions">
+                        <div>
+                            <img src="assets/functions-clock.png" alt="recording hours">
+                            <h3>
+                                Hours Log
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
+                                quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
+                            </p>
+                            <button class="btn-more">More</button>
+                        </div>
+                        <div>
+                            <img src="assets/functions-books.png" alt="Reports">
+                            <h3>
+                                Reports
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
+                                quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
+                            </p>
+                            <button class="btn-more">More</button>
+                        </div>
+                        <div>
+                            <img src="assets/functions-board.png" alt="Resource management">
+                            <h3>
+                                Resource management
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
+                                quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
+                            </p>
+                            <button class="btn-more">More</button>
+                        </div>
+                        <div>
+                            <img src="assets/functions-team.png" alt="Multiple roles">
+                            <h3>
+                                Multiple roles
+                            </h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur amet est omnis neque in
+                                quidem incidunt, placeat blanditiis voluptatem pariatur atque nam, dicta at quam, nostrum delectus quibusdam laborum qui.
+                            </p>
+                            <button class="btn-more">More</button>
+                        </div>
                     </div>
                 </section>
                 <section id="sec-form">
@@ -234,20 +236,19 @@
                             <input id="email" type="email">
                         </div>
                         <div>
-                            <label for="area">
-                                Area:
-                            </label>
-                            <select name="area" id="area">
-                                <option value="human_resources">
-                                    Human Recourses
-                                </option>
-                                <option value="systems">
-                                    Systems
-                                </option>
-                                <option value="marketing">
-                                    Marketing
-                                </option>
-                            </select>
+                            <label>Contact area:</label>
+                            <div>
+                                <input type="radio" name="contact_area" id="human_resources">
+                                <label for="contact_area">Human resources</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="contact_area" id="systems">
+                                <label for="contact_area">Systems</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="contact_area" id="marketing">
+                                <label for="contact_area">Marketing</label>
+                            </div>
                         </div>
                         <div>
                             <label for="message">

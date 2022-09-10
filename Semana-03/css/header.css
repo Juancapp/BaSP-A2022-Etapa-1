@@ -25,6 +25,11 @@ header div button {
     justify-content: space-between;
 }
 
+#btn-learn-more {
+    width: 150px;
+}
+
+
 #header-presentation {
     display: flex;
     width: 100%;
@@ -41,9 +46,7 @@ header div button {
 
 @media (max-width:769px) {
 
-    aside, #header-top, #sec-functions {
+    #header-top {
         display: none;
     }
-
-    
 }
