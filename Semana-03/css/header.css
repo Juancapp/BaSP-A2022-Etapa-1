@@ -25,6 +25,10 @@ header div button {
     justify-content: space-between;
 }
 
+#header-top div {
+    display: none;
+}
+
 #btn-sidebar {
     margin-right: 1em;
     color: rgba(241, 51, 18, 1);
@@ -38,7 +42,7 @@ header div button {
     display: flex;
     width: 100%;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 #header-left-section {
@@ -48,18 +52,29 @@ header div button {
     justify-content:space-around;
 }
 
-@media (max-width:769px) {
+#header-img {
+    width: 100%;
+}
 
-    #header-top div{
-        display: none;
+@media (min-width:769px) {
+
+    #header-top div {
+        display: inline-block;
     }
+
+    #header-presentation {
+        flex-direction: row;
+    }
+
+    #header-img {
+        width: 40%;
+        height: fit-content;
+    }
+
 }
 
 @media (min-width: 1024px) {
     #btn-sidebar {
         display: none;
     }
-    #header-presentation {
-        flex-wrap: nowrap;
-    }
-} m
+} 
