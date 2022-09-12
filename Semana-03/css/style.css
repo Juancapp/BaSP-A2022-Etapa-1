@@ -48,6 +48,7 @@ section {
 
 .header-main-footer {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     margin: 3%;
@@ -63,8 +64,4 @@ section {
 .icon:hover {
     color: rgba(241, 51, 18, 1);
     transition: 0.2s;
-}
-
-@media (max-width:769px) {
-
 }
