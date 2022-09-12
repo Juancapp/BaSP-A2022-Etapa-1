@@ -10,9 +10,9 @@
 
 
 body {
-    overflow-x: hidden;
     display: flex;
     flex-direction: row;
+    overflow-x: hidden;
 }
 
 a {
@@ -21,7 +21,7 @@ a {
 
 p {
     font-weight: 300;
-    font-size: clamp(14.4px, 2.5vw, 16px);
+    font-size: clamp(12px, 2.5vw, 16px);
 }
 
 i {
@@ -47,10 +47,7 @@ section {
 }
 
 .header-main-footer {
-    display: flex;
     flex: 1;
-    flex-direction: column;
-    justify-content: center;
     margin: 3%;
 }
 

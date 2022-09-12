@@ -27,10 +27,11 @@ How to open:
 
 ### Week 02
 ```
+    Description:
         - Adding styles to the first week page.
         - The CSS has been coded on 1440x900px resolution. Not responsive. 
         - On this week I've added all the style of main page called "style.css". This file is inside "css" folder. 
-        - I've created a copy of the folder "Semana-01" called "Semana-02" witch contained a exact copy of the index.html but with the corresponding bugs fixes from last week. Also, I've modified some elements to SS implementation easier. 
+        - I've created a copy of the folder "Semana-01" called "Semana-02" witch contained a exact copy of the index.html but with the corresponding bugs fixes from last week. Also, I've modified some elements to CSS implementation easier. 
         - I've added a reset.css to make the page more adaptative to different  browsers
         - Icon images of "assets" folder have been removed because I've replaced them by icons coming from https://fontawesome.com/.
         - I've priorized elements and ids selectors to to minimize the unnecessary use of classes. These have been used mainly to HTML components and very specific cases. 
@@ -41,6 +42,34 @@ How to open:
         1- Access to the folder "Semana-02".
         2- Open the file "index.html" on your browser.
         3- Make sure your browser display options are set to 14400x900px resolution.
+```
+
+### Week 03
+```
+    How to open:
+        - Enter the following URL: https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+
+    Descripcion:
+        - I've' continued to develop the same page as the previous week.
+        - Now responsive and flexbox.
+        - I've copied the contents of the "Semana-02" folder from the previous week and pasted it into the "Semana-03" folder to modify the css.
+        - I've tried to use relative and absolute positions minimally except for the sidebar in which I've used position fixed
+        - I've added the div of class "header-main-footer" that contains inside the main, header and footer to facilitate the use of display flex.
+        - I've separated the style.css by the following sections of the document:
+            - footer.css
+            - header.css 
+            - main.css 
+            - siderbar.css
+            - style.css
+        - 
+        - As in the previous week, I've used a reset css file called "reset.css" to make the page more adaptative to different  browsers.
+        - I've modified small and irrelevant  things of the HTML document to adapt it to display flexbox
+        - I've removed all float properties 
+        - I've changed select form input to radio input
+        - Media queries have been used as little as possible and I've maximized the use of flexbox  
+        - Sidebar is only displayed on desktop version, not in smarthphones and tablet versions. It will be shown by the orange button in the header when I implement javascript in the future.
+
+
 ```
 
  _By Juan Andrés Cappuccio_ 

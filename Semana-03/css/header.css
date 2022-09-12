@@ -1,7 +1,6 @@
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 32px;
 }
 
@@ -23,8 +22,8 @@ header div button {
 #header-top {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px rgba(241, 51, 18, 1) solid ;
     padding-bottom: 11.2px;
+    border-bottom: 2px rgba(241, 51, 18, 1) solid ;
 }
 
 #header-top div {
@@ -36,8 +35,9 @@ header div button {
 }
 
 #btn-sidebar {
-    margin-right: 1em;
+    margin-right: 16px;
     color: rgba(241, 51, 18, 1);
+    border-bottom: 2px white solid;
 }
 
 #btn-learn-more {
@@ -53,19 +53,21 @@ header div button {
 
 #header-left-section {
     display: flex;
-    gap: 1.5vh;
     flex-direction: column;
     justify-content:space-around;
+    gap: 1.5vh;
 }
 
 #header-img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
-@media (min-width:480px) {
+@media only screen and (min-width:480px) {
 
     #header-top div {
-        display: inline-block;
+        display: flex;
+        gap: 1px;
     }
 
     #header-presentation {
@@ -79,7 +81,7 @@ header div button {
 
 }
 
-@media (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     #btn-sidebar {
         display: none;
     }

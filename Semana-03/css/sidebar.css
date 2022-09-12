@@ -2,7 +2,6 @@ aside {
     display: none;
 }
 
-
 @media (min-width:1024px) {
     
     aside {
@@ -15,11 +14,11 @@ aside {
     aside .container {
         position: fixed;
         display: flex;
-        width: 20%;
         flex-direction: column;
         gap: 48px;
-        padding: 24px;
+        width: 20%;
         height: 100%;
+        padding: 24px;
         background-color: #AACE9B;
     }
 
@@ -74,14 +73,14 @@ aside {
         flex-direction: row;
         align-items: flex-start;
         gap: 11.2px;
-        color: rgb(55, 56, 103);
-        font-weight: 450;
         padding-bottom: 1em;
         border-bottom: rgb(55, 56, 103) solid 1px;
+        color: rgb(55, 56, 103);
+        font-weight: 450;
     }
 
     .contact-content div p i {
-        color: rgb(55, 56, 103);
         padding-top: 0.4em;
+        color: rgb(55, 56, 103);
     }
 }
