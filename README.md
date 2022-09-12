@@ -23,6 +23,9 @@ How to open:
     1- Access to the folder "Semana-01"
     2- Open the file "index.html" on your browser
 
+            or: 
+        - https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-01/index.html
+
  ``` 
 
 ### Week 02
@@ -42,6 +45,9 @@ How to open:
         1- Access to the folder "Semana-02".
         2- Open the file "index.html" on your browser.
         3- Make sure your browser display options are set to 14400x900px resolution.
+
+        or: 
+        - https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-02/index.html
 ```
 
 ### Week 03

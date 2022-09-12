@@ -8,7 +8,6 @@
     color: rgba(55, 56, 103, 1);
 }
 
-
 body {
     display: flex;
     flex-direction: row;
@@ -48,7 +47,7 @@ section {
 
 .header-main-footer {
     flex: 1;
-    margin: 3%;
+    margin: 15px 20px;
 }
 
 .link-icon {

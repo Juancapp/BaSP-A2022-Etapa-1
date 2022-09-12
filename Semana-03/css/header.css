@@ -19,9 +19,18 @@ header div button {
     height: 34px;
 }
 
+.link-icon {
+    padding-top: 7px;
+}
+
+#btn-sidebar {
+    padding-top: 2px;
+}
+
 #header-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 11.2px;
     border-bottom: 2px rgba(241, 51, 18, 1) solid ;
 }

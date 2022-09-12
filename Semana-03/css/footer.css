@@ -5,6 +5,7 @@ footer {
     align-items: center;
     gap: 16px;
     margin: 32px 0;
+    padding-bottom: 30px;
 }
 
 footer div {
