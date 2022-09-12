@@ -17,14 +17,14 @@ aside {
         display: flex;
         width: 20%;
         flex-direction: column;
-        gap:3rem;
-        padding: 1.5rem;
+        gap: 48px;
+        padding: 24px;
         height: 100%;
         background-color: #AACE9B;
     }
 
     aside .container h2 {
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
     }
 
     aside .container ul {
@@ -32,7 +32,7 @@ aside {
     }
 
     aside .container a {
-        font-size: 1.2rem;
+        font-size: 19.2px;
     }
 
     aside .container nav , aside .container article{
@@ -43,19 +43,19 @@ aside {
     aside .container .contact-content {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 32px;
     }
 
     aside .container nav ul li {
         border-bottom: 1px rgb(55, 56, 103) solid;
-        padding-bottom: 1rem;
-        padding-top: 1rem;
+        padding-bottom: 16px;
+        padding-top: 16px;
         cursor: pointer;
     }
 
     aside .container nav ul li:last-child{
-        padding-bottom: 2rem;
-        padding-top: 1rem;
+        padding-bottom: 32px;
+        padding-top: 16px;
     }
 
     aside .container nav ul li:hover a{
@@ -66,14 +66,14 @@ aside {
     .contact-content div {
         display: flex;
         flex-direction: column;
-        gap: 1.4rem;
+        gap: 22.4px;
     }
 
     .contact-content div p {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        gap: 0.7rem;
+        gap: 11.2px;
         color: rgb(55, 56, 103);
         font-weight: 450;
         padding-bottom: 1em;

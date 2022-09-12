@@ -21,7 +21,7 @@ a {
 
 p {
     font-weight: 300;
-    font-size: clamp(.8rem, 2.5vw, 1rem);
+    font-size: clamp(14.4px, 2.5vw, 16px);
 }
 
 i {
@@ -30,14 +30,14 @@ i {
 }
 
 h1 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);;
+    font-size: clamp(24px, 2.5vw, 32px);;
 }
 
 h2 {
     width: max-content;
-    margin-bottom: 3.75rem;
+    margin-bottom: 60px;
     border-bottom: #FF3E1D 2px solid;
-    font-size: clamp(1.3rem, 2.5vw, 1.875rem)
+    font-size: clamp(20.8px, 2.5vw, 30px)
 }
 
 section {

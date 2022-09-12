@@ -8,19 +8,19 @@
 .reasons {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 40px;
 }
 
 .reasons div {
     display: flex;
-    gap: 0.5rem;
+    gap: 8px;
     width: 90%;
 }
 
 .reasons div div {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
     flex-grow: 1;
 }
 
@@ -52,14 +52,14 @@
 .functions {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 32px;
 }
 
 .functions div {
     display: flex;
     flex-direction: column;
     width: 90%;
-    gap: 1rem;
+    gap: 16px;
 }
 
 /* Sec Form */
@@ -67,7 +67,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 28.8px;
 }
 
 input#name, input#email {
@@ -84,7 +84,7 @@ form div {
     display: flex;
     width: 90%;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 4.8px;
     font-weight: bold;
     align-self: center;
 }
@@ -123,7 +123,7 @@ form div:last-child {
 }
 
 .list div h4 {
-    margin-bottom: 0.4rem;
+    margin-bottom: 6.4px;
 }
 
 #btn-send {
@@ -149,6 +149,9 @@ form div:last-child {
 }
 
 /* Sec History */
+.image-left, .image-right {
+    margin: 8px 0;
+}
 
 #sec-history div p:nth-of-type(2), #sec-history div p:nth-of-type(3) {
     display: flex;
@@ -168,7 +171,6 @@ form div:last-child {
     margin-top: 20px;
 }
 
-
 /* Lists Section */ 
 
 .list div ol {
@@ -178,15 +180,15 @@ form div:last-child {
 #sec-list .list {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    margin-left: 2rem;
+    gap: 40px;
+    margin-left: 32px;
     justify-content: center;
 }
 
 #sec-list div ol li a {
     line-height: 1.3;
     cursor: pointer;
-    font-size: clamp(.8rem, 2.5vw, 1rem);
+    font-size: clamp(12.8px, 2.5vw, 16px);
 }
 
 #sec-list div ol li a:hover {
@@ -224,7 +226,7 @@ form div:last-child {
     }
 
     .image-left, .image-right {
-        min-width: 250px;
+        min-width: 326px;
     }
 
     .image-right {
@@ -232,15 +234,14 @@ form div:last-child {
     }
 
     #sec-history div p:nth-of-type(2), #sec-history div p:nth-of-type(3) {
-        display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 16px;
     }
 }
 
 @media (min-width: 1024px) {
     .functions {
         width: 70%;
-        gap: 3rem;
+        gap: 48px;
     }
 }

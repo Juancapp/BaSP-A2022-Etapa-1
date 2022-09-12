@@ -2,7 +2,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2rem;
+    gap: 32px;
 }
 
 header div div h4 {
@@ -11,7 +11,7 @@ header div div h4 {
 }
 
 header div h5 {
-    font-size: clamp(0.7rem, 2.5vw, 0.875rem);
+    font-size: clamp(13.6px, 2.5vw, 14px);
     font-weight: 500;
 }
 
@@ -24,7 +24,7 @@ header div button {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px rgba(241, 51, 18, 1) solid ;
-    padding-bottom: 0.7rem;
+    padding-bottom: 11.2px;
 }
 
 #header-top div {
