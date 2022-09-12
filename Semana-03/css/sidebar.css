@@ -6,49 +6,59 @@ aside {
 @media (min-width:1024px) {
     
     aside {
-        display: flex;
-        flex-direction: column;
-        background-color: #AACE9B;
-        gap:3rem;
-        padding: 1.5rem;
+        display: inline;
+        position: relative;
+        width: 20%;
+        height: 100%;
     }
 
-    aside h2 {
+    aside .container {
+        position: fixed;
+        display: flex;
+        width: 20%;
+        flex-direction: column;
+        gap:3rem;
+        padding: 1.5rem;
+        height: 100%;
+        background-color: #AACE9B;
+    }
+
+    aside .container h2 {
         margin-bottom: 1rem;
     }
 
-    aside ul {
+    aside .container ul {
         list-style:none;
     }
 
-    aside a {
+    aside .container a {
         font-size: 1.2rem;
     }
 
-    aside nav , aside article{
+    aside .container nav , aside .container article{
         display: flex;
         flex-direction: column;
     }
 
-    aside .contact-content {
+    aside .container .contact-content {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
-    aside nav ul li {
+    aside .container nav ul li {
         border-bottom: 1px rgb(55, 56, 103) solid;
         padding-bottom: 1rem;
         padding-top: 1rem;
         cursor: pointer;
     }
 
-    aside nav ul li:last-child{
+    aside .container nav ul li:last-child{
         padding-bottom: 2rem;
         padding-top: 1rem;
     }
 
-    aside nav ul li:hover a{
+    aside .container nav ul li:hover a{
         color: #FF3E1D;
         transition: 0.2s;
     }    

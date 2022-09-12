@@ -201,6 +201,10 @@ form div:last-child {
         width: 45%;
     }
 
+    .functions {
+        width: 60%;
+    }
+
     .functions div{
         width: 45%;
     }
