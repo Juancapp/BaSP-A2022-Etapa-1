@@ -12,6 +12,7 @@
 body {
     overflow-x: hidden;
     display: flex;
+    flex-direction: row;
 }
 
 a {
@@ -28,89 +29,15 @@ i {
     cursor: pointer;
 }
 
+h1 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);;
+}
+
 h2 {
     width: max-content;
     margin-bottom: 3.75rem;
     border-bottom: #FF3E1D 2px solid;
-    font-size: 30px;
     font-size: clamp(1.7rem, 2.5vw, 1.875rem);
-}
-
-aside {
-    padding: 20px 25px;
-    flex-grow: 1;
-    align-self: stretch;
-    background-color: #AACE9B;
-}
-
-aside i {
-    display: inline-block;
-    padding-left: 10px;
-    margin: 0 2px;
-    margin-top: 12px;
-    color: #373867;
-    cursor: default;
-}
-
-aside nav ul li {
-    display: block;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-bottom: 1px #4d4e6d solid;
-    font-size: 18px;
-}
-
-aside nav ul li:last-child {
-    padding-bottom: 60px;
-}
-
-aside nav ul li a {
-    padding: 13px 10px;
-    height: 49px;
-    cursor: pointer;
-}
-
-aside nav ul li a:hover {
-    color: #FF3E1D;
-    transition: 0.2s;
-}
-
-aside nav {
-    margin-bottom: 60px;
-}
-
-aside article div p {
-    line-height: 1.4;
-}
-
-aside article h2:last-of-type {
-    margin-bottom: 24px;
-}
-
-aside article div {
-    margin-top: 40px;
-}
-
-aside article div:first-of-type {
-    margin-top: 0px;
-}
-
-aside article div div {
-    margin-top: initial;
-    padding-top: 12px;
-    padding-bottom: 16px;
-    border-bottom: 1px #4d4e6d solid;
-}
-
-aside article div div:nth-child(2) {
-    padding-bottom: 32px;
-    padding-top: 16px;
-}
-
-aside article div div p {
-    float: right;
-    width: 230px;
-    font-weight: 400;
 }
 
 section {
@@ -136,7 +63,6 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 4;
     margin: 3%;
 }
 
@@ -184,11 +110,4 @@ footer p {
 
 @media (max-width:769px) {
 
-}
-
-@media (max-width:1024px) {
-
-    aside {
-        display: none;
-    }
 }

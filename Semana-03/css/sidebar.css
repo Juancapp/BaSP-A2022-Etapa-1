@@ -1,0 +1,77 @@
+aside {
+    display: none;
+}
+
+
+@media (min-width:1024px) {
+    
+    aside {
+        display: flex;
+        flex-direction: column;
+        background-color: #AACE9B;
+        gap:3rem;
+        padding: 1.5rem;
+    }
+
+    aside h2 {
+        margin-bottom: 1rem;
+    }
+
+    aside ul {
+        list-style:none;
+    }
+
+    aside a {
+        font-size: 1.2rem;
+    }
+
+    aside nav , aside article{
+        display: flex;
+        flex-direction: column;
+    }
+
+    aside .contact-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    aside nav ul li {
+        border-bottom: 1px rgb(55, 56, 103) solid;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        cursor: pointer;
+    }
+
+    aside nav ul li:last-child{
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
+    aside nav ul li:hover a{
+        color: #FF3E1D;
+        transition: 0.2s;
+    }    
+
+    .contact-content div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+
+    .contact-content div p {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0.7rem;
+        color: rgb(55, 56, 103);
+        font-weight: 450;
+        padding-bottom: 1em;
+        border-bottom: rgb(55, 56, 103) solid 1px;
+    }
+
+    .contact-content div p i {
+        color: rgb(55, 56, 103);
+        padding-top: 0.4em;
+    }
+}
