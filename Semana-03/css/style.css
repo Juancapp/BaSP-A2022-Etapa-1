@@ -37,7 +37,7 @@ h2 {
     width: max-content;
     margin-bottom: 3.75rem;
     border-bottom: #FF3E1D 2px solid;
-    font-size: clamp(1.7rem, 2.5vw, 1.875rem);
+    font-size: clamp(1.3rem, 2.5vw, 1.875rem)
 }
 
 section {
@@ -52,7 +52,6 @@ section {
     flex-direction: column;
     justify-content: center;
     margin: 3%;
-    width: 80%;
 }
 
 .link-icon {

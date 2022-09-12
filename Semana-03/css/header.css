@@ -31,6 +31,10 @@ header div button {
     display: none;
 }
 
+#header-top p {
+    text-align: center;
+}
+
 #btn-sidebar {
     margin-right: 1em;
     color: rgba(241, 51, 18, 1);
