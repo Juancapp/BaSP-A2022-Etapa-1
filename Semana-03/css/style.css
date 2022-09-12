@@ -21,7 +21,7 @@ a {
 
 p {
     font-weight: 300;
-    font-size: clamp(.7rem, 2.5vw, 1rem);
+    font-size: clamp(.8rem, 2.5vw, 1rem);
 }
 
 i {
@@ -42,7 +42,7 @@ h2 {
 
 section {
     margin-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     border-bottom: 2px rgba(55, 56, 103, 1) solid;
 }
 
@@ -71,41 +71,10 @@ footer p {
     height: 32px;
 }
 
-.image-left {
-    float: left;
-    padding: 0 24px 16px 0;
-}
-
-.image-right {
-    float: right;
-    padding: 30px 0 16px 24px;
-    margin-bottom: 10px;
-}
 
 .icon:hover {
     color: rgba(241, 51, 18, 1);
     transition: 0.2s;
-}
-
-#sec-history div p span img {
-    width: 300px;
-}
-
-#sec-history div p:first-of-type{
-    margin-bottom: 40px;
-}
-
-#sec-history div p:last-child {
-    margin-top: 30px;
-}
-
-#sec-history h4 {
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-#sec-history div h4:last-of-type {
-    margin-top: 20px;
 }
 
 @media (max-width:769px) {
