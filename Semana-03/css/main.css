@@ -52,7 +52,7 @@
 .functions {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .functions div {
@@ -201,10 +201,6 @@ form div:last-child {
         width: 45%;
     }
 
-    .functions {
-        width: 60%;
-    }
-
     .functions div{
         width: 45%;
     }
@@ -243,19 +239,8 @@ form div:last-child {
 }
 
 @media (min-width: 1024px) {
-
+    .functions {
+        width: 70%;
+        gap: 3rem;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    font-size:clamp(1rem, 2.5vw, 1.2rem);*/
