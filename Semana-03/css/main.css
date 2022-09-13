@@ -4,16 +4,6 @@ form {
     gap: 28.8px;
 }
 
-input#name, input#email {
-    width: 100%;
-    height: 35px;
-    padding: 0 10px;
-    border: 1px #373867 solid;
-    border-radius: 5px;
-    color: #373867;
-    font-weight: 500;
-}
-
 form div {
     display: flex;
     flex-direction: column;
@@ -44,6 +34,16 @@ form div textarea {
 
 form div:last-child {
     flex-direction: row;
+}
+
+input#name, input#email {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px #373867 solid;
+    border-radius: 5px;
+    color: #373867;
+    font-weight: 500;
 }
 
 .reasons {

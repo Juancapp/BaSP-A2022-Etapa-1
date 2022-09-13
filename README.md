@@ -56,9 +56,9 @@ How to open:
         - Enter the following URL: https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
 
     Descripcion:
-        - I've' continued to develop the same page as the previous week.
-        - Now responsive and flexbox.
-        - I've copied the contents of the "Semana-02" folder from the previous week and pasted it into the "Semana-03" folder to modify the css.
+        - Main change: Now responsive and flexbox.
+        - I've continued to develop the same page as the previous week.
+        - I've copied the contents of the "Semana-02" folder from the previous week and pasted it into the "Semana-03" folder to modify the CSS.
         - I've tried to use relative and absolute positions minimally except for the sidebar in which I've used position fixed
         - I've added the div of class "header-main-footer" that contains inside the main, header and footer to facilitate the use of display flex.
         - I've separated the style.css by the following sections of the document:
@@ -67,7 +67,6 @@ How to open:
             - main.css 
             - siderbar.css
             - style.css
-        - 
         - As in the previous week, I've used a reset css file called "reset.css" to make the page more adaptative to different  browsers.
         - I've modified small and irrelevant  things of the HTML document to adapt it to display flexbox
         - I've removed all float properties 
