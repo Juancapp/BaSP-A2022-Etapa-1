@@ -47,7 +47,7 @@ section {
 
 .header-main-footer {
     flex: 1;
-    margin: 15px 20px;
+    padding: 15px 20px;
 }
 
 .link-icon {
