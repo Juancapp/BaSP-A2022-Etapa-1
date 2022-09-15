@@ -54,6 +54,9 @@ console.log(firstBlankSpace)
     Utilizar los métodos de los ejercicios anteriores para generar un nuevo string que tenga la primera
     letra de ambas palabras en mayúscula y las demás letras en minúscula (utilizar indexOf, substring, toUpperCase, toLowerCase y el operador +). */
 
+console.log('-Exercise 2.f:');
+
+
 var textStr = 'Pedro is a sleepwalker and hypochondriac and usually feels very bad';
 
 var result = textStr.substring(0, 11).toLocaleLowerCase() + 
