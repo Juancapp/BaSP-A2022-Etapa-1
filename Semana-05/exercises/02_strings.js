@@ -59,9 +59,9 @@ console.log('-Exercise 2.f:');
 
 var textStr = 'Pedro is a sleepwalker and hypochondriac and usually feels very bad';
 
-var result = textStr.substring(0, 11).toLocaleLowerCase() + 
-            textStr.substring(11, textStr.indexOf('sleepwalker') + 1).toUpperCase() +
-            textStr.substring(12, textStr.indexOf('hypochondriac')).toLowerCase() + 
+var result = textStr.substring(0, textStr.indexOf('sleepwalker')).toLocaleLowerCase() + 
+            textStr.substring(textStr.indexOf('sleepwalker'), textStr.indexOf('sleepwalker') + 1).toUpperCase() +
+            textStr.substring(textStr.indexOf('sleepwalker') + 1, textStr.indexOf('hypochondriac')).toLowerCase() + 
             textStr.substring(textStr.indexOf('hypochondriac'), textStr.indexOf('hypochondriac') + 1).toUpperCase() +
             textStr.substring(textStr.indexOf('hypochondriac') + 1, textStr.length).toLowerCase();
 
