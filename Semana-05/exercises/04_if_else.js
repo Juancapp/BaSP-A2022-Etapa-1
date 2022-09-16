@@ -6,11 +6,11 @@ si el valor es mayor o igual que 0,5 mostrar una alerta con el mensaje “Greate
 
 console.log('-Exercise 4.a:');
 
-    var num = Math.random();
+var num = Math.random();
 
-    console.log(num);
+console.log('Number is ' + num);
 
-    num >= 0.5 ? alert('Greater than 0,5') : alert('Lower than 0,5');
+num >= 0.5 ? alert('Greater than 0,5') : alert('Lower than 0,5');
 
 
 /* b  -  Crear una variable “Age” que contenga un número entero entre 0 y 100 y muestre los siguientes mensajes de alerta:
@@ -26,15 +26,15 @@ console.log('-Exercise 4.a:');
 console.log('-Exercise 4.b:');
 
 var age = Math.round(Math.random() * 100);
-console.log(age)
+console.log('Age is: ' + age);
 
-if (age < 2) alert('Bebé')
-if (age >= 2 && age <=12) alert('Niño')
-if (age >= 13 && age <= 19) alert ('Adolescente')
-if (age >= 20 && age <= 30) alert ('Jóven')
-if (age >= 31 && age <= 60) alert ('Adulto')
-if (age >= 61 && age <= 75) alert ('Adulto mayor')
-if (age > 75) alert ('Anciano')
+if (age < 2) alert('Bebé');
+if (age >= 2 && age <=12) alert('Niño');
+if (age >= 13 && age <= 19) alert ('Adolescente');
+if (age >= 20 && age <= 30) alert ('Jóven');
+if (age >= 31 && age <= 60) alert ('Adulto');
+if (age >= 61 && age <= 75) alert ('Adulto mayor');
+if (age > 75) alert ('Anciano');
 
 
 
