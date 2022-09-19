@@ -51,7 +51,7 @@ aside .container nav ul li:last-child{
 aside .container nav ul li:hover a{
     color: #FF3E1D;
     transition: 0.2s;
-}    
+}
 
 .contact-content div {
     display: flex;
@@ -76,7 +76,7 @@ aside .container nav ul li:hover a{
 }
 
 @media (min-width:1024px) {
-    
+
     aside {
         display: inline;
         position: relative;
