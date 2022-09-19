@@ -32,5 +32,5 @@ var secondStr = 'How are you?';
 
 var totalLength = firstStr.length + secondStr.length;
 
-console.log(totalLength); 
+console.log(totalLength);
 

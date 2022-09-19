@@ -65,6 +65,5 @@ var result = textStr.substring(0, textStr.indexOf('sleepwalker')).toLocaleLowerC
             textStr.substring(textStr.indexOf('hypochondriac'), textStr.indexOf('hypochondriac') + 1).toUpperCase() +
             textStr.substring(textStr.indexOf('hypochondriac') + 1, textStr.length).toLowerCase();
 
-
 console.log(result)
 
