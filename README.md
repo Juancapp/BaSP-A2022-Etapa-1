@@ -24,7 +24,7 @@ How to open:
     2- Open the file "index.html" on your browser
 
             or:
-        - https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-01/index.html
+        - <https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-01/index.html>
 
  ```
 
@@ -47,13 +47,13 @@ How to open:
         3- Make sure your browser display options are set to 14400x900px resolution.
 
         or:
-        - (https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-02/index.html)
+        - <https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-02/index.html)>
 ```
 
 ### Week 03
 ```
     How to open:
-        - Enter the following URL: (https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html)
+        - Enter the following URL: <https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html)>
 
     Descripcion:
         - Main change: Now responsive and flexbox.
