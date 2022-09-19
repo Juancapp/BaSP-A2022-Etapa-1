@@ -1,6 +1,7 @@
 console.log('--EXERCISE 2: STRINGS');
 
-// a - Crear una variable de tipo string con al menos 10 caracteres y convertir todo el texto en mayúscula (utilizar toUpperCase).
+// a - Crear una variable de tipo string con al menos 10 caracteres y
+// convertir todo el texto en mayúscula (utilizar toUpperCase).
 
 console.log('-Exercise 2.a:');
 
@@ -52,7 +53,8 @@ console.log(firstBlankSpace)
 
 /*  f -Crear una variable de tipo string con al menos 2 palabras largas (10 caracteres y algún espacio entre medio).
     Utilizar los métodos de los ejercicios anteriores para generar un nuevo string que tenga la primera
-    letra de ambas palabras en mayúscula y las demás letras en minúscula (utilizar indexOf, substring, toUpperCase, toLowerCase y el operador +). */
+    letra de ambas palabras en mayúscula y las demás letras en minúscula
+     (utilizar indexOf, substring, toUpperCase, toLowerCase y el operador +). */
 
 console.log('-Exercise 2.f:');
 

@@ -4,7 +4,7 @@ console.log('--EXERCISE 1: VARIABLES AND OPERATORS');
 
 console.log('-Exercise 1.a:');
 
-var firstNum, secondNum
+var firstNum, secondNum;
 
 firstNum = 5;
 secondNum = 4;
@@ -16,21 +16,23 @@ console.log(sumNum);
 
 console.log('-Exercise 1.b:');
 
-var firstStr = 'Hi, I am Radium Rocket,';
+var firstStr = 'Hi, I am Radium Rocket.';
 var secondStr = ' How are you?'
 
 var sumStr = firstStr + secondStr;
 
-console.log(sumStr)
+console.log(sumStr);
 
-// c - Crear una variable de tipo string con al menos 10 caracteres y generar un nuevo string con los últimos 3 caracteres guardando el resultado en una nueva variable (utilizar substring).
+// Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string)
+//guardando el resultado de la suma en una 3er variable (utilizar length).
+
 
 console.log('-Exercise 1.c:');
 
 var firstStr = 'Hi, I am Radium Rocket, ';
 var secondStr = 'How are you?';
 
-var totalLength = firstStr.length + secondStr.length;
+var totalLength = firstStr.length + secondStr.length
 
 console.log(totalLength);
 

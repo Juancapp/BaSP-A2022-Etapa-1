@@ -17,8 +17,8 @@ console.log('-Exercise 5.b:');
 
 for (let i = 0; i < arr.length; i++) {
     var element = arr[i];;
-    mayusElement = element.slice(0, 1).toUpperCase() + element.slice(1);
-    alert(mayusElement);
+    element = element.slice(0, 1).toUpperCase() + element.slice(1);
+    alert(element);
 }
 
 // c - Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto

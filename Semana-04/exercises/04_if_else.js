@@ -26,7 +26,7 @@ num >= 0.5 ? alert('Greater than 0,5') : alert('Lower than 0,5');
 console.log('-Exercise 4.b:');
 
 var age = Math.round(Math.random() * 100);
-console.log('Age is: ' + age);
+console.log(`Age is: ${age}`);
 
 if (age < 2) alert('Bebé');
 if (age >= 2 && age <=12) alert('Niño');
