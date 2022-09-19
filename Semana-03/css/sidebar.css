@@ -76,7 +76,6 @@ aside .container nav ul li:hover a{
 }
 
 @media (min-width:1024px) {
-
     aside {
         display: inline;
         position: relative;
