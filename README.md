@@ -73,5 +73,25 @@
     - Media queries have been used as little as possible and I've maximized the use of flexbox
     - Sidebar is only displayed on desktop version, not in smarthphones and tablet versions. It will be shown by the orange button in the header when I implement javascript in the future.
 
- _By Juan Andrés Cappuccio_
+### Week 04
+- URL:
+  - Week 03: https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html
+  - Week 04: https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
+
+- Description:
+    - Week  03:
+      - I've corrected errors from the previous week. Unnecessary spaces have been removed and I've deleted unnecessary media queries elements.
+    - Week 04:
+       - The page contains six imported javascript scripts containing the following exercises that I've solved:
+         - 01: Variables and operators:
+         - 02: Strings
+         - 03: Arrays
+         - 04: If and Else (conditionals)
+         - 05: For (bucle)
+         - 06: Functions
+     -  Technologies I've used:
+         - HTML5
+         - Javascript (ES5)
+
+ _By Juan Andrés Cappuccio._
 
