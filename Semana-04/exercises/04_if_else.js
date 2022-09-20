@@ -35,7 +35,3 @@ if (age >= 20 && age <= 30) alert ('Jóven');
 if (age >= 31 && age <= 60) alert ('Adulto');
 if (age >= 61 && age <= 75) alert ('Adulto mayor');
 if (age > 75) alert ('Anciano');
-
-
-
-

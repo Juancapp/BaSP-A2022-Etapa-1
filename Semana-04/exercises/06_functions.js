@@ -109,4 +109,3 @@ console.log(result);
 
 var result = sumE(8, 2);
 console.log(result);
-

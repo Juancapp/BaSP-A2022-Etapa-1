@@ -17,7 +17,7 @@ console.log(sumNum);
 console.log('-Exercise 1.b:');
 
 var firstStr = 'Hi, I am Radium Rocket.';
-var secondStr = ' How are you?'
+var secondStr = ' How are you?';
 
 var sumStr = firstStr + secondStr;
 
@@ -32,7 +32,6 @@ console.log('-Exercise 1.c:');
 var firstStr = 'Hi, I am Radium Rocket, ';
 var secondStr = 'How are you?';
 
-var totalLength = firstStr.length + secondStr.length
+var totalLength = firstStr.length + secondStr.length;
 
 console.log(totalLength);
-

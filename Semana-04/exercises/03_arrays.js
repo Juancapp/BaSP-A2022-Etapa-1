@@ -63,4 +63,3 @@ var array = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
 var arraySlice = array.slice(4, 11);
 
 console.log(arraySlice);
-
