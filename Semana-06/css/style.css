@@ -45,12 +45,38 @@ section {
     border-bottom: 2px rgba(55, 56, 103, 1) solid;
 }
 
+.input {
+    height: 30px;
+    border: none;
+    border-bottom: 1px #373867 solid;
+    padding: 0 5px;
+    margin-bottom: 3px;
+}
+
+.form-login label, .form-sign-up label {
+    font-size: 16px;
+}
+
 .header-main-footer {
     flex: 1;
     padding: 15px 6px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.button-submit {
+    width: 100px;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+    padding: 10px 0;
+    background-color: #9DC88A;
+    align-self: center;
 }
 
 .link-icon {
@@ -62,3 +88,4 @@ section {
     color: rgba(241, 51, 18, 1);
     transition: 0.2s;
 }
+
