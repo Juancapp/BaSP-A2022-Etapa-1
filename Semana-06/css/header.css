@@ -1,0 +1,97 @@
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+header div div h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header div h5 {
+    font-size: clamp(13.6px, 2.5vw, 14px);
+    font-weight: 500;
+}
+
+header div button {
+    width: 143px;
+    height: 34px;
+}
+
+.link-icon {
+    padding-top: 7px;
+}
+
+#btn-sidebar {
+    padding-top: 2px;
+}
+
+#header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 11.2px;
+    border-bottom: 2px rgba(241, 51, 18, 1) solid ;
+}
+
+#header-top div {
+    display: none;
+}
+
+#header-top p {
+    text-align: center;
+}
+
+#btn-sidebar {
+    margin-right: 16px;
+    color: rgba(241, 51, 18, 1);
+    border-bottom: 2px white solid;
+}
+
+#btn-learn-more {
+    width: 150px;
+}
+
+#header-presentation {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    flex-direction: column;
+}
+
+#header-left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    gap: 1.5vh;
+}
+
+#header-img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (min-width:480px) {
+
+    #header-top div {
+        display: flex;
+        gap: 1px;
+    }
+
+    #header-presentation {
+        flex-direction: row;
+    }
+
+    #header-img {
+        width: 30%;
+        height: fit-content;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    #btn-sidebar {
+        display: none;
+    }
+}

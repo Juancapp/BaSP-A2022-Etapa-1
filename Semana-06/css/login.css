@@ -1,0 +1,79 @@
+.form-login {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    font-weight: 500;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+}
+
+.input {
+    height: 30px;
+    border: none;
+    border-bottom: 1px #373867 solid;
+    padding: 0 5px;
+    margin-bottom: 3px;
+}
+
+#sec-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 0;
+    border: 0;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+fieldset:nth-child(3) label {
+    font-size: 14px;
+    align-items: center;
+}
+
+#button-submit {
+    width: 100px;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+    padding: 10px 0;
+    background-color: #9DC88A;
+    align-self: center;
+}
+
+#button-submit:hover {
+    background-color: #74af5b
+}
+
+.error {
+    color: red;
+}
+
+#input-checkbox {
+    margin: 0;
+}
+
+@media only screen and (min-width:480px) {
+    .form-login {
+        width: 30%;
+    }
+}
