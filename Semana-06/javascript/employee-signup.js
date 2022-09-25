@@ -110,7 +110,7 @@ function isNotValid(input, p, errorText) {
 
 function nameValidation() {
     var newPForThisValidation = document.getElementById('pError-0')
-    if (inputName.value.length > 8 && isThisStringHasOnlyLetters(inputName.value)) {
+    if (inputName.value.length > 2 && isThisStringHasOnlyLetters(inputName.value)) {
         isValid(inputName, newPForThisValidation);
         textErrors[0] = ''
         return true
@@ -124,7 +124,7 @@ function nameValidation() {
 
 function lastNameValidation() {
     var newPForThisValidation = document.getElementById('pError-1')
-    if (inputLastName.value.length > 8 && isThisStringHasOnlyLetters(inputLastName.value)) {
+    if (inputLastName.value.length > 3 && isThisStringHasOnlyLetters(inputLastName.value)) {
         isValid(inputLastName, newPForThisValidation)
         textErrors[1] = ''
         return true
