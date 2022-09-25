@@ -34,15 +34,6 @@ fieldset:nth-child(3) label {
     align-items: center;
 }
 
-
-#button-submit:hover {
-    background-color: #74af5b
-}
-
-.error {
-    color: red;
-}
-
 #input-checkbox {
     margin: 0;
 }

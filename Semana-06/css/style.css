@@ -79,9 +79,18 @@ section {
     align-self: center;
 }
 
+.button-submit:hover {
+    background-color: #74af5b
+}
+
 .link-icon {
     width: 32px;
     height: 32px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
 }
 
 .icon:hover {

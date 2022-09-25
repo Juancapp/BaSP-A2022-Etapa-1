@@ -1,10 +1,12 @@
-// window.onload = function() {}
 
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputs = document.querySelectorAll('input');
 var button = document.getElementById('button-submit');
+
 var liHome = document.getElementById('li-home');
+var liSignUp = document.getElementById('li-sign-up')
+var liContact = document.getElementById('li-contact')
 
 for (var i = 0; i < 2; i++) {
     var newP = document.createElement('p');
@@ -78,6 +80,14 @@ function goHome() {
     window.location.href = '../views/index.html'
 }
 
+function goSignUp() {
+    window.location.href = '../views/employee-signup.html'
+}
+
+function goLogIn() {
+    window.location.href = '../views/login.html'
+}
+
 inputEmail.addEventListener('blur', emailValidation);
 inputPassword.addEventListener('blur', passwordValidation);
 
@@ -87,5 +97,6 @@ inputPassword.addEventListener('focus', whenFocus);
 
 button.addEventListener('click', isSubmit)
 liHome.addEventListener('click', goHome)
+liSignUp.addEventListener('click', goSignUp)
 
 
