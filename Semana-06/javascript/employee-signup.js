@@ -98,68 +98,64 @@ function letterCounter(string) {
     return letters
 }
 
-function isValid(input, p) {
-    p.innerText = ' ';
+function isValid(input) {
+    input.nextElementSibling.innerText = ' ';
     input.style.borderColor = '#373867';
 }
 
-function isNotValid(input, p, errorText) {
+function isNotValid(input, errorText) {
     input.style.borderColor = 'red'
-    p.innerText = errorText;
+    input.nextElementSibling.innerText = errorText;
 }
 
 function nameValidation() {
-    var newPForThisValidation = document.getElementById('pError-0')
     if (inputName.value.length > 2 && isThisStringHasOnlyLetters(inputName.value)) {
-        isValid(inputName, newPForThisValidation);
+        isValid(inputName);
         textErrors[0] = ''
         return true
     }
     else {
-        isNotValid(inputName, newPForThisValidation, 'Name must contain at least 3 caracters')
+        isNotValid(inputName, 'Name must contain at least 3 caracters')
         textErrors[0] = 'Name must contain at least 3 caracters';
         return false
     }
 }
 
 function lastNameValidation() {
-    var newPForThisValidation = document.getElementById('pError-1')
     if (inputLastName.value.length > 3 && isThisStringHasOnlyLetters(inputLastName.value)) {
-        isValid(inputLastName, newPForThisValidation)
+        isValid(inputLastName)
         textErrors[1] = ''
         return true
     }
     else {
-        isNotValid(inputLastName, newPForThisValidation, 'Last name must contain at least 3 caracters')
+        isNotValid(inputLastName, 'Last name must contain at least 3 caracters')
         textErrors[1] = 'Last name must contain at least 3 caracters'
         return false
     }
 }
 
 function DNIValidation() {
-    var newPForThisValidation = document.getElementById('pError-2');
     if (inputDNI.value.length >= 7 && isThisStringHasOnlyNumbers(inputDNI.value)) {
-        isValid(inputDNI, newPForThisValidation)
+        isValid(inputDNI)
         textErrors[2] = ''
         return true
     } else {
-        isNotValid(inputDNI, newPForThisValidation, 'Dni must be numeric and greater than 7')
+        isNotValid(inputDNI, 'Dni must be numeric and greater than 7')
         textErrors[2] = 'Dni must be numeric and greater than 7'
         return false
     }
 }
 
 function birdthdayValidation() {
-    var newPForThisValidation = document.getElementById('pError-3');
     let isValidDate = Date.parse(inputBirthday.value);
 
     if (isNaN(isValidDate)) {
-        isNotValid(inputBirthday, newPForThisValidation, 'This is not a valid birthday format')
+        isNotValid(inputBirthday, 'This is not a valid birthday format')
         textErrors[3] = 'This is not a valid birthday format'
         return false
     }
     else{
-        isValid(inputBirthday, newPForThisValidation)
+        isValid(inputBirthday)
         textErrors[3] = ''
         return true
     }
@@ -167,58 +163,54 @@ function birdthdayValidation() {
 }
 
 function PhoneValidation() {
-    var newPForThisValidation = document.getElementById('pError-4');
     if (inputPhone.value.length === 10 && isThisStringHasOnlyNumbers(inputPhone.value)) {
-        isValid(inputPhone, newPForThisValidation)
+        isValid(inputPhone)
         textErrors[4] = ''
         return true
     } else {
-        isNotValid(inputPhone, newPForThisValidation, 'Phone must contain 10 numbers')
+        isNotValid(inputPhone, 'Phone must contain 10 numbers')
         textErrors[4] = 'Phone must contain 10 numbers'
         return false
     }
 }
 
 function residenceValidation() {
-    var newPForThisValidation = document.getElementById('pError-5');
     var stringFirstPart = inputResidence.value.substring(0, inputResidence.value.indexOf(' '));
     var stringSecondPart = inputResidence.value.substring(inputResidence.value.indexOf(' ') +
         1, inputResidence.value.length);
 
     if (inputResidence.value.length >= 5 && isThisStringHasOnlyLetters(stringFirstPart)
     && isThisStringHasOnlyNumbers(stringSecondPart)) {
-        isValid(inputResidence, newPForThisValidation)
+        isValid(inputResidence)
         textErrors[5] = ''
         return true
     } else {
-        isNotValid(inputResidence, newPForThisValidation, 'Enter a valid residence')
+        isNotValid(inputResidence, 'Enter a valid residence')
         textErrors[5] = 'Enter a valid residence'
         return false
     }
 }
 
 function locationValidation() {
-    var newPForThisValidation = document.getElementById('pError-6');
     if (isThisStringHasOnlyNumbersAndLetters(inputLocation.value) && letterCounter(inputLocation.value) > 3) {
-        isValid(inputLocation, newPForThisValidation);
+        isValid(inputLocation);
         textErrors[6] = ''
         return true
     } else {
-        isNotValid(inputLocation, newPForThisValidation, 'Enter a valid location');
+        isNotValid(inputLocation, 'Enter a valid location');
         textErrors[6] = 'Enter a valid location'
         return false
     }
 }
 
 function postalCodeValidation() {
-    var newPForThisValidation = document.getElementById('pError-7');
     if ((inputPostalCode.value.length == 4 || inputPostalCode.value.length == 5) && isThisStringHasOnlyNumbers(inputPostalCode.value)) {
-        isValid(inputPostalCode, newPForThisValidation);
+        isValid(inputPostalCode);
         textErrors[7] = ''
         return true
     }
     else {
-        isNotValid(inputPostalCode, newPForThisValidation, 'Must contain 4 to 5 numbers');
+        isNotValid(inputPostalCode, 'Must contain 4 to 5 numbers');
         textErrors[7] = 'Must contain 4 to 5 numbers'
         return false
     }
@@ -226,25 +218,24 @@ function postalCodeValidation() {
 
 function emailValidation() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    var newPForThisValidation = document.getElementById('pError-8');
 
     if (!emailExpression.test(inputEmail.value)) {
-        isNotValid(inputEmail, newPForThisValidation, 'Must be an email');
+        isNotValid(inputEmail, 'Must be an email');
         textErrors[8] = 'Must be an email'
         return false
     }
     if (emailExpression.test(inputEmail.value)) {
-        isValid(inputEmail, newPForThisValidation);
+        isValid(inputEmail);
         textErrors[8] = ''
         return true
     }
 }
 
 function passwordValidation() {
-    var newPForThisValidation = document.getElementById('pError-9');
     if (inputPassword.value.length < 8) {
         inputPassword.style.borderColor = 'red'
-        return newPForThisValidation.innerText = 'Password must contain at least 8 caracters and numbers'
+        inputPassword.nextElementSibling.innerText = 'Password must contain at least 8 caracters and numbers'
+        return false
     }
     var numbers = false
     var letters = false
@@ -260,33 +251,31 @@ function passwordValidation() {
     }
 
     if (numbers == true && letters == true && specialCaracters == true) {
-        isValid(inputPassword, newPForThisValidation);
+        isValid(inputPassword);
         textErrors[9] = ''
         return true
     }
     else {
-        isNotValid(inputPassword, newPForThisValidation, 'Must contain numbers and letters and at least 8 characters');
+        isNotValid(inputPassword, 'Must contain numbers and letters and at least 8 characters');
         textErrors[9] = 'Must contain numbers and letters and at least 8 characters'
         return false
     }
 }
 
 function repeatPasswordValidation() {
-    var newPForThisValidation = document.getElementById('pError-10');
     if (inputRepeat.value === inputPassword.value) {
-        isValid(inputRepeat, newPForThisValidation);
+        isValid(inputRepeat);
         textErrors[10] = ''
         return true
     } else {
-        isNotValid(inputRepeat, newPForThisValidation, `Password don't match`);
+        isNotValid(inputRepeat, `Password don't match`);
         textErrors[10] = 'Must contain numbers and letters and at least 8 characters'
         return false
     }
 }
 
 function whenFocus(e) {
-    var newPForThisValidation = e.target.nextElementSibling;
-    newPForThisValidation.innerText = ''
+    e.target.nextElementSibling.innerText = '';
     e.target.style.borderColor = '#373867'
 }
 
