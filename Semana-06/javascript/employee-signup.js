@@ -304,8 +304,7 @@ function buttonClick() {
         Location: ${inputLocation.value}
         Postal Code: ${inputPostalCode.value}
         Email: ${inputEmail.value}
-        Password: ${inputPassword.value}
-        Repeat password: ${inputRepeat.value}`)
+        Password: ${inputPassword.value}`)
     } else {
         var stringErrors = '';
         for (let i = 0; i < textErrors.length; i++) {
