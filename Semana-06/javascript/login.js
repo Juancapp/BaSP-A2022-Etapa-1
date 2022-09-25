@@ -8,6 +8,11 @@ var liHome = document.getElementById('li-home');
 var liSignUp = document.getElementById('li-sign-up')
 var liContact = document.getElementById('li-contact')
 
+var textErrors = [
+    'Must be an email',
+    `Password is wrong`,
+]
+
 for (var i = 0; i < 2; i++) {
     var newP = document.createElement('p');
     var fieldset = inputs[i].parentElement;
@@ -16,25 +21,39 @@ for (var i = 0; i < 2; i++) {
     newP.id = 'pError-' + i;
 }
 
+function isValid(input, p) {
+    p.innerText = ' ';
+    input.style.borderColor = '#373867';
+}
+
+function isNotValid(input, p, errorText) {
+    input.style.borderColor = 'red'
+    p.innerText = errorText;
+}
+
 function emailValidation() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var newPForThisValidation = document.getElementById('pError-0');
 
     if (!emailExpression.test(inputEmail.value)) {
-        newPForThisValidation.innerText = 'Must be an email';
-        inputEmail.style.borderColor = 'red'
+        isNotValid(inputEmail, newPForThisValidation, 'Must be an email')
+        textErrors[0] = 'Must be an email'
+        return false
     }
     if (emailExpression.test(inputEmail.value)) {
-        newPForThisValidation.innerText = ' ';
+        isValid(inputEmail, newPForThisValidation)
+        textErrors[0] = ''
         return true
     }
 }
 
+
 function passwordValidation() {
     var newPForThisValidation = document.getElementById('pError-1');
     if (inputPassword.value.length < 8) {
-        inputPassword.style.borderColor = 'red'
-        return newPForThisValidation.innerText = 'Password must contain at least 8 caracters and numbers'
+        isNotValid(inputPassword, newPForThisValidation, 'Password is wrong')
+        textErrors[1] = 'Password is wrong';
+        return false;
     }
     var numbers = false
     var letters = false
@@ -50,13 +69,15 @@ function passwordValidation() {
     }
 
     if (numbers == true && letters == true && specialCaracters == true) {
-        newPForThisValidation.innerText = ' ';
-        inputPassword.style.borderColor = '#373867'
+        isValid(inputPassword, newPForThisValidation)
+        textErrors[0] = ''
         return true
     }
     else {
         inputPassword.style.borderColor = 'red'
-        return newPForThisValidation.innerText = 'Password must contain at least 8 caracters and numbers'
+        isNotValid(inputPassword, newPForThisValidation, 'Password is wrong')
+        textErrors[1] = 'Password is wrong';
+        return false
     }
 }
 
@@ -66,13 +87,19 @@ function whenFocus(e) {
     e.target.style.borderColor = '#373867'
 }
 
-function isSubmit() {
-    if (passwordValidation() == emailValidation() !== true) return alert ('something is wrong');
-    else {
-        for (var i = 0; i < 2; i++) {
-            var input = inputs[i];
-            input.value = ''
+function buttonClick() {
+    if (passwordValidation() == true && emailValidation() == true) {
+        alert(`
+        Email: ${inputEmail.value}
+        Password: ${inputPassword.value}`)
+    } else {
+        var stringErrors = '';
+        for (let i = 0; i < textErrors.length; i++) {
+            if (textErrors[i] !== '') {
+                stringErrors += '- ' + textErrors[i] + '\n'
+            }
         }
+        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
     }
 }
 
@@ -94,8 +121,7 @@ inputPassword.addEventListener('blur', passwordValidation);
 inputEmail.addEventListener('focus', whenFocus);
 inputPassword.addEventListener('focus', whenFocus);
 
-
-button.addEventListener('click', isSubmit)
+button.addEventListener('click', buttonClick)
 liHome.addEventListener('click', goHome)
 liSignUp.addEventListener('click', goSignUp)
 
