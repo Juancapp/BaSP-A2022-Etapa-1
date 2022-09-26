@@ -20,13 +20,19 @@ for (var i = 0; i < 2; i++) {
     var newP = document.createElement('p');
     var fieldset = inputs[i].parentElement;
     fieldset.appendChild(newP);
-    newP.className = 'error';
-    newP.id = 'pError-' + i;
+    newP.className = 'error-hidden';
+    newP.id = 'p-error-' + i;
 }
+
+var pError0 = document.getElementById('p-error-0');
+var pError1 = document.getElementById('p-error-1');
+
+pError0.textContent = 'Must be an email'
+pError1.textContent = 'Password is wrong'
 
 // Validation helper functions:
 function isValid(input, i) {
-    input.nextElementSibling.innerText = ' ';
+    input.nextElementSibling.classList = 'error-hidden'
     input.style.borderColor = '#373867';
     textErrors[i] = ''
     return true;
@@ -34,7 +40,7 @@ function isValid(input, i) {
 
 function isNotValid(input, i, errorText) {
     input.style.borderColor = 'red';
-    input.nextElementSibling.innerText = errorText;
+    input.nextElementSibling.classList = 'error'
     textErrors[i] = errorText;
     return false;
 }
@@ -66,7 +72,7 @@ function passwordValidation() {
 }
 
 function whenFocus(e) {
-    e.target.nextElementSibling.innerText = '';
+    e.target.nextElementSibling.className = 'error-hidden'
     e.target.style.borderColor = '#373867';
 }
 

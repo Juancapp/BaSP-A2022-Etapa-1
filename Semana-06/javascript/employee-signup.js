@@ -12,7 +12,7 @@ var inputPostalCode = document.getElementById('input-postal-code');
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputRepeat = document.getElementById('input-repeat-password');
-var inputs = document.querySelectorAll('#form-sign-up input');
+var inputs = document.querySelectorAll('input');
 
 // Buttons variables:
 var liHome = document.getElementById('li-home');
@@ -25,9 +25,34 @@ for (var i = 0; i < 11; i++) {
     var newP = document.createElement('p');
     var fieldset = inputs[i].parentElement;
     fieldset.appendChild(newP);
-    newP.className = 'error';
-    newP.id = 'pError-' + i;
+    newP.className = 'error-hidden';
+    newP.id = 'p-error-' + i;
 }
+
+var pError0 = document.getElementById('p-error-0');
+var pError1 = document.getElementById('p-error-1');
+var pError2 = document.getElementById('p-error-2');
+var pError3 = document.getElementById('p-error-3');
+var pError4 = document.getElementById('p-error-4');
+var pError5 = document.getElementById('p-error-5');
+var pError6 = document.getElementById('p-error-6');
+var pError7 = document.getElementById('p-error-7');
+var pError8 = document.getElementById('p-error-8');
+var pError9 = document.getElementById('p-error-9');
+var pError10 = document.getElementById('p-error-10');
+var pError11 = document.getElementById('p-error-11');
+
+pError0.innerText = 'Name must contain at least 3 caracters'
+pError1.innerText = 'Last name must contain at least 3 caracters'
+pError2.innerText = 'Dni must be numeric and greater than 7'
+pError3.innerText = 'This is not a valid birthday format'
+pError4.innerText = 'Phone must contain 10 numbers'
+pError5.innerText = 'Enter a valid residence'
+pError6.innerText = 'Enter a valid location'
+pError7.innerText = 'Must contain 4 to 5 numbers'
+pError8.innerText = 'Must be an email'
+pError9.innerText = 'Password must contain at least 8 caracters and numbers'
+pError10.innerText = `Password don't match`
 
 var textErrors = [
     'Name must contain at least 3 caracters',
@@ -99,15 +124,15 @@ function letterCounter(string) {
 }
 
 function isValid(input, i) {
-    input.nextElementSibling.innerText = ' ';
+    input.nextElementSibling.classList = 'error-hidden'
     input.style.borderColor = '#373867';
-    textErrors[i] = '';
+    textErrors[i] = ''
     return true;
 }
 
 function isNotValid(input, i, errorText) {
-    input.style.borderColor = 'red'
-    input.nextElementSibling.innerText = errorText;
+    input.style.borderColor = 'red';
+    input.nextElementSibling.classList = 'error'
     textErrors[i] = errorText;
     return false;
 }
@@ -196,7 +221,7 @@ function repeatPasswordValidation() {
 }
 
 function whenFocus(e) {
-    e.target.nextElementSibling.innerText = '';
+    e.target.nextElementSibling.className = 'error-hidden'
     e.target.style.borderColor = '#373867';
 }
 
