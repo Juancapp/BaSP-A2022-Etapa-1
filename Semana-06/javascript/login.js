@@ -4,7 +4,6 @@ var formLogIn = document.getElementById('form-login')
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputs = document.querySelectorAll('input');
-// var button = document.getElementById('button-submit');
 
 // Buttons variables:
 var liHome = document.getElementById('li-home');
