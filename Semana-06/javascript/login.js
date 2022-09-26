@@ -1,8 +1,10 @@
+var formLogIn = document.getElementById('form-login')
+
 // Input variables:
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputs = document.querySelectorAll('input');
-var button = document.getElementById('button-submit');
+// var button = document.getElementById('button-submit');
 
 // Buttons variables:
 var liHome = document.getElementById('li-home');
@@ -74,7 +76,7 @@ function buttonClick() {
     if (passwordValidation() == true && emailValidation() == true) {
         alert(`
         Email: ${inputEmail.value}
-        Password: ${inputPassword.value}`)
+        Password: ${inputPassword.value}`);
     } else {
         var stringErrors = '';
         for (let i = 0; i < textErrors.length; i++) {
@@ -107,7 +109,7 @@ inputEmail.addEventListener('focus', whenFocus);
 inputPassword.addEventListener('focus', whenFocus);
 
 // Click events:
-button.addEventListener('click', buttonClick);
+formLogIn.addEventListener("submit", buttonClick)
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
 

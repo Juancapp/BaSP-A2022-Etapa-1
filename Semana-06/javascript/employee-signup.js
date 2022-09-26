@@ -1,3 +1,5 @@
+var formSignUp = document.getElementById('form-sign-up');
+
 // Input variables:
 var inputName = document.getElementById('input-name');
 var inputLastName = document.getElementById('input-last-name');
@@ -10,10 +12,9 @@ var inputPostalCode = document.getElementById('input-postal-code');
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputRepeat = document.getElementById('input-repeat-password');
-var inputs = document.querySelectorAll('input');
+var inputs = document.querySelectorAll('#form-sign-up input');
 
 // Buttons variables:
-var button = document.getElementById('button-submit');
 var liHome = document.getElementById('li-home');
 var liSignUp = document.getElementById('li-sign-up');
 var liLogIn = document.getElementById('li-log-in');
@@ -108,7 +109,7 @@ function isNotValid(input, i, errorText) {
     input.style.borderColor = 'red'
     input.nextElementSibling.innerText = errorText;
     textErrors[i] = errorText;
-        return false;
+    return false;
 }
 
 function lastNameAndNameValidations(input, i, errorText) {
@@ -265,7 +266,7 @@ inputLocation.addEventListener('focus', whenFocus);
 inputBirthday.addEventListener('focus', whenFocus);
 
 // Click events:
-button.addEventListener('click', buttonClick);
+formSignUp.addEventListener('submit', buttonClick);
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
 liLogIn.addEventListener('click', goLogIn);
