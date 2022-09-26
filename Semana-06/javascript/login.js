@@ -1,13 +1,15 @@
-
+// Input variables:
 var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputs = document.querySelectorAll('input');
 var button = document.getElementById('button-submit');
 
+// Buttons variables:
 var liHome = document.getElementById('li-home');
-var liSignUp = document.getElementById('li-sign-up')
-var liContact = document.getElementById('li-contact')
+var liSignUp = document.getElementById('li-sign-up');
+var liContact = document.getElementById('li-contact');
 
+// Errors variables:
 var textErrors = [
     'Must be an email',
     `Password is wrong`,
@@ -21,40 +23,30 @@ for (var i = 0; i < 2; i++) {
     newP.id = 'pError-' + i;
 }
 
-function isValid(input, p) {
-    p.innerText = ' ';
+// Validation helper functions:
+function isValid(input, i) {
+    input.nextElementSibling.innerText = ' ';
     input.style.borderColor = '#373867';
+    textErrors[i] = ''
+    return true;
 }
 
-function isNotValid(input, p, errorText) {
-    input.style.borderColor = 'red'
-    p.innerText = errorText;
+function isNotValid(input, i, errorText) {
+    input.style.borderColor = 'red';
+    input.nextElementSibling.innerText = errorText;
+    textErrors[i] = errorText;
+    return false;
 }
 
+// Validation of each input:
 function emailValidation() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    var newPForThisValidation = document.getElementById('pError-0');
-
-    if (!emailExpression.test(inputEmail.value)) {
-        isNotValid(inputEmail, newPForThisValidation, 'Must be an email')
-        textErrors[0] = 'Must be an email'
-        return false
-    }
-    if (emailExpression.test(inputEmail.value)) {
-        isValid(inputEmail, newPForThisValidation)
-        textErrors[0] = ''
-        return true
-    }
+    if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 0, 'Must be an email');
+    if (emailExpression.test(inputEmail.value)) return isValid(inputEmail, 0);
 }
 
-
 function passwordValidation() {
-    var newPForThisValidation = document.getElementById('pError-1');
-    if (inputPassword.value.length < 8) {
-        isNotValid(inputPassword, newPForThisValidation, 'Password is wrong')
-        textErrors[1] = 'Password is wrong';
-        return false;
-    }
+    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 1, 'Password is wrong')
     var numbers = false
     var letters = false
     var specialCaracters = true;
@@ -68,25 +60,16 @@ function passwordValidation() {
         else if (charCode > 32 && charCode < 48) specialCaracters = false;
     }
 
-    if (numbers == true && letters == true && specialCaracters == true) {
-        isValid(inputPassword, newPForThisValidation)
-        textErrors[0] = ''
-        return true
-    }
-    else {
-        inputPassword.style.borderColor = 'red'
-        isNotValid(inputPassword, newPForThisValidation, 'Password is wrong')
-        textErrors[1] = 'Password is wrong';
-        return false
-    }
+    if (numbers == true && letters == true && specialCaracters == true) return isValid(inputPassword, 0)
+    return isNotValid(inputPassword, 1, 'Password is wrong')
 }
 
 function whenFocus(e) {
-    var newPForThisValidation = e.target.nextElementSibling;
-    newPForThisValidation.innerText = ''
-    e.target.style.borderColor = '#373867'
+    e.target.nextElementSibling.innerText = '';
+    e.target.style.borderColor = '#373867';
 }
 
+// Buttons functions:
 function buttonClick() {
     if (passwordValidation() == true && emailValidation() == true) {
         alert(`
@@ -96,7 +79,7 @@ function buttonClick() {
         var stringErrors = '';
         for (let i = 0; i < textErrors.length; i++) {
             if (textErrors[i] !== '') {
-                stringErrors += '- ' + textErrors[i] + '\n'
+                stringErrors += '- ' + textErrors[i] + '\n';
             }
         }
         alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
@@ -104,25 +87,28 @@ function buttonClick() {
 }
 
 function goHome() {
-    window.location.href = '../views/index.html'
+    window.location.href = '../views/index.html';
 }
 
 function goSignUp() {
-    window.location.href = '../views/employee-signup.html'
+    window.location.href = '../views/employee-signup.html';
 }
 
 function goLogIn() {
-    window.location.href = '../views/login.html'
+    window.location.href = '../views/login.html';
 }
 
+// Blur events:
 inputEmail.addEventListener('blur', emailValidation);
 inputPassword.addEventListener('blur', passwordValidation);
 
+// Focus events:
 inputEmail.addEventListener('focus', whenFocus);
 inputPassword.addEventListener('focus', whenFocus);
 
-button.addEventListener('click', buttonClick)
-liHome.addEventListener('click', goHome)
-liSignUp.addEventListener('click', goSignUp)
+// Click events:
+button.addEventListener('click', buttonClick);
+liHome.addEventListener('click', goHome);
+liSignUp.addEventListener('click', goSignUp);
 
 
