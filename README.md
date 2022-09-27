@@ -93,5 +93,22 @@
          - HTML5
          - Javascript (ES5)
 
+### Week 04
+- URL:
+  - Page : https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-06/views/
+  - Requirements: https://docs.google.com/document/d/1KotZSjI2ndLsVBDQJahv5Wosp1PJm5zNtmrVUsIubhg/edit#heading=h.qsfut16j32ed
+
+  - I've added all forms validations to the Trackgenix page.
+  - All responsive.
+  - I've created 2 .html files, 2 .css files and 3 .js files to make the forms logics.
+  - I've change the index.html folder path and i putted inside all the html files.
+  - I've reused CSS styles of the html form to apply them in the login and sign up forms.
+  - I've used DOM to modificate and create HTML elements and attributes.btn-form.
+- Technologies I've used:
+  - HTML5
+  - CSS
+  - Javascript (ES5)
+
+
  _By Juan Andrés Cappuccio._
 

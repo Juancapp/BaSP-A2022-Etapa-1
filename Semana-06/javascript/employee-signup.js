@@ -301,4 +301,3 @@ liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
 liLogIn.addEventListener('click', goLogIn);
 liContact.addEventListener('click', goContact);
-

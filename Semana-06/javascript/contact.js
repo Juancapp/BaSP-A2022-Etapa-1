@@ -103,9 +103,24 @@ function emailValidation() {
     if (emailExpression.test(inputEmail.value)) return isValid(inputEmail, 1);
 }
 
+function goHome() {
+    window.location.href = '#header-top';
+}
+
+function goSignUp() {
+    window.location.href = '../views/employee-signup.html';
+}
+
+function goLogIn() {
+    window.location.href = '../views/login.html';
+}
+
 inputName.addEventListener('blur', nameValidation);
 inputEmail.addEventListener('blur', emailValidation);
 
 inputName.addEventListener('focus', whenFocus);
 inputEmail.addEventListener('focus', whenFocus);
 
+liHome.addEventListener('click', goHome);
+liSignUp.addEventListener('click', goSignUp);
+liLogIn.addEventListener('click', goLogIn);

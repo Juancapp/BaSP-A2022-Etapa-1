@@ -80,12 +80,12 @@ function whenFocus(e) {
 function buttonClick() {
     if (passwordValidation() == true && emailValidation() == true) {
         alert(`        Form data:
-        
+
         Email: ${inputEmail.value}
         Password: ${inputPassword.value}`);
     } else {
         var stringErrors = '';
-        for (let i = 0; i < textAlertErrors.length; i++) {
+        for (var i = 0; i < textAlertErrors.length; i++) {
             if (textAlertErrors[i] !== '') {
                 stringErrors += '- ' + textAlertErrors[i] + '\n';
             }
@@ -123,5 +123,4 @@ formLogIn.addEventListener("submit", buttonClick)
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
 liContact.addEventListener('click', goContact);
-
-
+liLogIn.addEventListener('click', goLogIn);
