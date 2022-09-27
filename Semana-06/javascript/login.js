@@ -33,7 +33,7 @@ var textAlertErrors = [
 // Validation helper functions:
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
-    input.style.borderColor = '#373867';
+    input.style.borderColor = '#009400';
     textAlertErrors[i] = ''
     return true;
 }
@@ -106,6 +106,10 @@ function goLogIn() {
     window.location.href = '../views/login.html';
 }
 
+function goContact() {
+    window.location.href = '../views/index.html#sec-form';
+}
+
 // Blur events:
 inputEmail.addEventListener('blur', emailValidation);
 inputPassword.addEventListener('blur', passwordValidation);
@@ -118,5 +122,6 @@ inputPassword.addEventListener('focus', whenFocus);
 formLogIn.addEventListener("submit", buttonClick)
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
+liContact.addEventListener('click', goContact);
 
 

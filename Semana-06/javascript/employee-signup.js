@@ -124,7 +124,7 @@ function letterCounter(string) {
 
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
-    input.style.borderColor = '#198754';
+    input.style.borderColor = '#009400';
     textAlertErrors[i] = ''
     return true;
 }
@@ -265,6 +265,10 @@ function goLogIn() {
     window.location.href = '../views/login.html';
 }
 
+function goContact() {
+    window.location.href = '../views/index.html#sec-form';
+}
+
 // Blur events:
 inputName.addEventListener('blur', nameValidation);
 inputLastName.addEventListener('blur', lastNameValidation);
@@ -296,3 +300,5 @@ formSignUp.addEventListener('submit', buttonClick);
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
 liLogIn.addEventListener('click', goLogIn);
+liContact.addEventListener('click', goContact);
+

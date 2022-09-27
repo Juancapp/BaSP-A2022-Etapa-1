@@ -70,7 +70,7 @@ function isLetter(a) {
 
 function isValid(input, i) {
     document.getElementById(`p-error-${i}`).classList = 'error-hidden'
-    input.style.borderColor = '#198754';
+    input.style.borderColor = '#009400'; //'#198754'
     textAlertErrors[i] = ''
     return true;
 }
