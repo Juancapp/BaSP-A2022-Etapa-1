@@ -62,7 +62,7 @@ var textErrors = [
     'Phone must contain 10 numbers',
     'Enter a valid residence',
     'Enter a valid location',
-    'Must contain 4 to 5 numbers',
+    'Postal code must contain 4 to 5 numbers',
     'Must be an email',
     `Password must contain at least 8 caracters and numbers`,
     `Password don't match`,
@@ -85,8 +85,7 @@ function isThisStringHasOnlyLetters(string) {
 }
 
 function isNumber(caracter) {
-    var numberCaracter = parseInt(caracter);
-    return !isNaN(numberCaracter);
+    return !isNaN(parseInt(caracter));
 }
 
 function isThisStringHasOnlyNumbers(string) {
@@ -157,7 +156,7 @@ function DNIValidation() {
 }
 
 function birdthdayValidation() {
-    let isValidDate = Date.parse(inputBirthday.value);
+    var isValidDate = Date.parse(inputBirthday.value);
     if (isNaN(isValidDate)) return isNotValid(inputBirthday, 3, 'This is not a valid birthday format');
     return isValid(inputBirthday, 3);
 }
@@ -186,7 +185,7 @@ function locationValidation() {
 function postalCodeValidation() {
     if ((inputPostalCode.value.length == 4 || inputPostalCode.value.length == 5)
     && isThisStringHasOnlyNumbers(inputPostalCode.value)) return isValid(inputPostalCode, 7);
-    return isNotValid(inputPostalCode, 7, 'Must contain 4 to 5 numbers');
+    return isNotValid(inputPostalCode, 7, 'Postal code must contain 4 to 5 numbers');
 }
 
 function emailValidation() {
@@ -220,7 +219,7 @@ function repeatPasswordValidation() {
     return isNotValid(inputRepeat, 10, `Password don't match`);
 }
 
-function whenFocus(e) {
+function whenFocus(e) { // cambiar forma de estilo (asignar un border top al p)
     e.target.nextElementSibling.className = 'error-hidden'
     e.target.style.borderColor = '#373867';
 }
@@ -243,7 +242,7 @@ function buttonClick() {
         Password: ${inputPassword.value}`)
     } else {
         var stringErrors = '';
-        for (let i = 0; i < textErrors.length; i++) {
+        for (var i = 0; i < textErrors.length; i++) {
             if (textErrors[i] != '') {
                 stringErrors += '- ' + textErrors[i] + '\n';
             }
