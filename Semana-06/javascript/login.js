@@ -11,11 +11,6 @@ var liSignUp = document.getElementById('li-sign-up');
 var liContact = document.getElementById('li-contact');
 
 // Errors variables:
-var textErrors = [
-    'Must be an email',
-    `Password is wrong`,
-]
-
 for (var i = 0; i < 2; i++) {
     var newP = document.createElement('p');
     var fieldset = inputs[i].parentElement;
@@ -30,30 +25,35 @@ var pError1 = document.getElementById('p-error-1');
 pError0.textContent = 'Must be an email'
 pError1.textContent = 'Password is wrong'
 
+var textAlertErrors = [
+    pError0.textContent,
+    pError1.textContent,
+]
+
 // Validation helper functions:
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
     input.style.borderColor = '#373867';
-    textErrors[i] = ''
+    textAlertErrors[i] = ''
     return true;
 }
 
 function isNotValid(input, i, errorText) {
     input.style.borderColor = 'red';
     input.nextElementSibling.classList = 'error'
-    textErrors[i] = errorText;
+    textAlertErrors[i] = errorText;
     return false;
 }
 
 // Validation of each input:
 function emailValidation() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 0, 'Must be an email');
+    if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 0, pError0.textContent);
     if (emailExpression.test(inputEmail.value)) return isValid(inputEmail, 0);
 }
 
 function passwordValidation() {
-    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 1, 'Password is wrong')
+    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 1, pError1.textContent)
     var numbers = false
     var letters = false
     var specialCaracters = true;
@@ -79,14 +79,15 @@ function whenFocus(e) {
 // Buttons functions:
 function buttonClick() {
     if (passwordValidation() == true && emailValidation() == true) {
-        alert(`
+        alert(`        Form data:
+        
         Email: ${inputEmail.value}
         Password: ${inputPassword.value}`);
     } else {
         var stringErrors = '';
-        for (let i = 0; i < textErrors.length; i++) {
-            if (textErrors[i] !== '') {
-                stringErrors += '- ' + textErrors[i] + '\n';
+        for (let i = 0; i < textAlertErrors.length; i++) {
+            if (textAlertErrors[i] !== '') {
+                stringErrors += '- ' + textAlertErrors[i] + '\n';
             }
         }
         alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);

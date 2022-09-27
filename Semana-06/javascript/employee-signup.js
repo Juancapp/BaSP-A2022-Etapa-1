@@ -42,30 +42,30 @@ var pError9 = document.getElementById('p-error-9');
 var pError10 = document.getElementById('p-error-10');
 var pError11 = document.getElementById('p-error-11');
 
-pError0.innerText = 'Name must contain at least 3 caracters'
-pError1.innerText = 'Last name must contain at least 3 caracters'
+pError0.innerText = 'Name must contain at least 2 caracters'
+pError1.innerText = 'Last name must contain at least 2 caracters'
 pError2.innerText = 'Dni must be numeric and greater than 7'
-pError3.innerText = 'This is not a valid birthday format'
-pError4.innerText = 'Phone must contain 10 numbers'
-pError5.innerText = 'Enter a valid residence'
+pError3.innerText = 'You must introduce a valid date'
+pError4.innerText = `Phone must start with '598' and contain 10 numbers`
+pError5.innerText = 'Residence must contain first letters and then numbers'
 pError6.innerText = 'Enter a valid location'
 pError7.innerText = 'Must contain 4 to 5 numbers'
 pError8.innerText = 'Must be an email'
 pError9.innerText = 'Password must contain at least 8 caracters and numbers'
-pError10.innerText = `Password don't match`
+pError10.innerText = `Passwords don't match`
 
-var textErrors = [
-    'Name must contain at least 3 caracters',
-    'Last name must contain at least 3 caracters',
-    'Dni must be numeric and greater than 7',
-    'This is not a valid birthday format',
-    'Phone must contain 10 numbers',
-    'Enter a valid residence',
-    'Enter a valid location',
-    'Postal code must contain 4 to 5 numbers',
-    'Must be an email',
-    `Password must contain at least 8 caracters and numbers`,
-    `Password don't match`,
+var textAlertErrors = [
+    pError0.textContent,
+    pError1.textContent,
+    pError2.textContent,
+    pError3.textContent,
+    pError4.textContent,
+    pError5.textContent,
+    pError6.textContent,
+    pError7.textContent,
+    pError8.textContent,
+    pError9.textContent,
+    pError10.textContent,
 ]
 
 // Validation helper functions:
@@ -125,45 +125,46 @@ function letterCounter(string) {
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
     input.style.borderColor = '#198754';
-    textErrors[i] = ''
+    textAlertErrors[i] = ''
     return true;
 }
 
 function isNotValid(input, i, errorText) {
     input.style.borderColor = 'red';
     input.nextElementSibling.classList = 'error';
-    textErrors[i] = errorText;
+    textAlertErrors[i] = errorText;
     return false;
 }
 
 function lastNameAndNameValidations(input, i, errorText) {
-    if (input.value.length > 2 && isThisStringHasOnlyLetters(input.value)) return isValid(input, i);
+    if (input.value.length > 1 && isThisStringHasOnlyLetters(input.value)) return isValid(input, i);
     return isNotValid(input, i, errorText);
 }
 
 // Validation of each input:
 function nameValidation() {
-    return lastNameAndNameValidations(inputName, 0, 'Name must contain at least 3 caracters');
+    return lastNameAndNameValidations(inputName, 0, pError0.textContent);
 }
 
 function lastNameValidation() {
-    return lastNameAndNameValidations(inputLastName, 1, 'Last name must contain at least 3 caracters');
+    return lastNameAndNameValidations(inputLastName, 1, pError1.textContent);
 }
 
 function DNIValidation() {
     if (inputDNI.value.length >= 7 && isThisStringHasOnlyNumbers(inputDNI.value)) return isValid(inputDNI, 2);
-    return isNotValid(inputDNI, 2, 'Dni must be numeric and greater than 7');
+    return isNotValid(inputDNI, 2, pError2.textContent);
 }
 
 function birdthdayValidation() {
     var isValidDate = Date.parse(inputBirthday.value);
-    if (isNaN(isValidDate)) return isNotValid(inputBirthday, 3, 'This is not a valid birthday format');
+    if (isNaN(isValidDate)) return isNotValid(inputBirthday, 3, pError3.textContent);
     return isValid(inputBirthday, 3);
 }
 
-function PhoneValidation() {
-    if (inputPhone.value.length === 10 && isThisStringHasOnlyNumbers(inputPhone.value)) return isValid(inputPhone, 4);
-    isNotValid(inputPhone, 4, 'Phone must contain 10 numbers');
+function phoneValidation() {
+    if (inputPhone.value.length === 10 && isThisStringHasOnlyNumbers(inputPhone.value)
+    && inputPhone.value.substring(0, 3) === '598') return isValid(inputPhone, 4);
+    isNotValid(inputPhone, 4, pError4.textContent);
 }
 
 function residenceValidation() {
@@ -173,30 +174,30 @@ function residenceValidation() {
 
     if (inputResidence.value.length >= 5 && isThisStringHasOnlyLetters(stringFirstPart)
     && isThisStringHasOnlyNumbers(stringSecondPart)) return isValid(inputResidence, 5)
-    return isNotValid(inputResidence, 5, 'Enter a valid residence');
+    return isNotValid(inputResidence, 5, pError5.textContent);
 }
 
 function locationValidation() {
     if (isThisStringHasOnlyNumbersOrLetters(inputLocation.value)
     && letterCounter(inputLocation.value) > 3) return isValid(inputLocation, 6);
-    return isNotValid(inputLocation, 6, 'Enter a valid location');
+    return isNotValid(inputLocation, 6, pError6.textContent);
 }
 
 function postalCodeValidation() {
     if ((inputPostalCode.value.length == 4 || inputPostalCode.value.length == 5)
     && isThisStringHasOnlyNumbers(inputPostalCode.value)) return isValid(inputPostalCode, 7);
-    return isNotValid(inputPostalCode, 7, 'Postal code must contain 4 to 5 numbers');
+    return isNotValid(inputPostalCode, 7, pError7.textContent);
 }
 
 function emailValidation() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-    if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 8, 'Must be an email');
+    if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 8, pError8.textContent);
     if (emailExpression.test(inputEmail.value)) return isValid(inputEmail, 8);
 }
 
 function passwordValidation() {
-    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 9, 'Must contain numbers and letters and at least 8 characters');
+    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 9, pError9.textContent);
     var numbers = false;
     var letters = false;
     var specialCaracters = true;
@@ -211,25 +212,26 @@ function passwordValidation() {
     }
 
     if (numbers == true && letters == true && specialCaracters == true) return isValid(inputPassword, 9);
-    return isNotValid(inputPassword, 9, 'Must contain numbers and letters and at least 8 characters');
+    return isNotValid(inputPassword, 9, pError9.textContent);
 }
 
 function repeatPasswordValidation() {
-    if (inputRepeat.value === inputPassword.value) return isValid(inputRepeat, 10);
-    return isNotValid(inputRepeat, 10, `Password don't match`);
+    if (inputRepeat.value === inputPassword.value && inputRepeat.value.length !== 0) return isValid(inputRepeat, 10);
+    else isNotValid(inputRepeat, 10, pError10.textContent);
 }
 
-function whenFocus(e) { // cambiar forma de estilo (asignar un border top al p)
+function whenFocus(e) {
     e.target.nextElementSibling.className = 'error-hidden'
     e.target.style.borderColor = '#373867';
 }
 
 // Buttons functions:
 function buttonClick() {
-    if (nameValidation() === true && lastNameValidation() === true && DNIValidation() === true && PhoneValidation() === true && residenceValidation() === true &&
+    if (nameValidation() === true && lastNameValidation() === true && DNIValidation() === true && phoneValidation() === true && residenceValidation() === true &&
         locationValidation() === true && postalCodeValidation() === true && emailValidation() === true && passwordValidation() === true &&
         repeatPasswordValidation() === true) {
-        alert(`
+        alert(`        Form data:
+
         Name: ${inputName.value}
         Last Name: ${inputLastName.value}
         DNI: ${inputDNI.value}
@@ -242,9 +244,9 @@ function buttonClick() {
         Password: ${inputPassword.value}`)
     } else {
         var stringErrors = '';
-        for (var i = 0; i < textErrors.length; i++) {
-            if (textErrors[i] != '') {
-                stringErrors += '- ' + textErrors[i] + '\n';
+        for (var i = 0; i < textAlertErrors.length; i++) {
+            if (textAlertErrors[i] != '') {
+                stringErrors += '- ' + textAlertErrors[i] + '\n';
             }
         }
         alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
@@ -270,7 +272,7 @@ inputEmail.addEventListener('blur', emailValidation);
 inputPassword.addEventListener('blur', passwordValidation);
 inputRepeat.addEventListener('blur', repeatPasswordValidation);
 inputDNI.addEventListener('blur', DNIValidation);
-inputPhone.addEventListener('blur', PhoneValidation);
+inputPhone.addEventListener('blur', phoneValidation);
 inputPostalCode.addEventListener('blur', postalCodeValidation);
 inputResidence.addEventListener('blur', residenceValidation);
 inputLocation.addEventListener('blur', locationValidation);
