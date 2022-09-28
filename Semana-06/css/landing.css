@@ -34,6 +34,7 @@ form div div label {
 form div textarea {
     width: 100%;
     height: 100px;
+    padding: 3px 5px;
     border: #373867 1px solid;
     border-radius: 5px;
     resize: none;

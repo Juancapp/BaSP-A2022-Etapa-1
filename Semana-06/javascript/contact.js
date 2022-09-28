@@ -1,12 +1,24 @@
+// Form variable:
 var formContact = document.getElementById('form-contact')
 
+// Input variables:
 var inputName = document.getElementById('input-name');
 var inputEmail = document.getElementById('input-email');
 var inputHumanResources = document.getElementById('input-human-resources');
 var inputSystems = document.getElementById('input-systems');
 var inputMarketing = document.getElementById('input-marketing');
+var inputMessage = document.getElementById('input-message')
 var divsForm = document.querySelectorAll('#form-contact > div');
+var inputsRadio = document.querySelectorAll('input[type="radio"]');
 
+// Buttons variables:
+var liHome = document.getElementById('li-home');
+var liSignUp = document.getElementById('li-sign-up');
+var liLogIn = document.getElementById('li-log-in');
+var liContact = document.getElementById('li-contact');
+var btnSend = document.getElementById('btn-send')
+
+// Errors variables:
 for (var i = 0; i < 4; i++) {
     var newP = document.createElement('p');
     divsForm[i].appendChild(newP);
@@ -22,7 +34,7 @@ var pError3 = document.getElementById('p-error-3');
 pError0.innerText = 'Name must contain at least 2 caracters'
 pError1.innerText = 'Email error'
 pError2.innerText = 'Checkbox error'
-pError3.innerText = 'Text area error'
+pError3.innerText = 'Message must be alphanumeric and greater than 3 characters'
 
 var textAlertErrors = [
     pError0.textContent,
@@ -70,7 +82,7 @@ function isLetter(a) {
 
 function isValid(input, i) {
     document.getElementById(`p-error-${i}`).classList = 'error-hidden'
-    input.style.borderColor = '#009400'; //'#198754'
+    input.style.borderColor = '#009400';
     textAlertErrors[i] = ''
     return true;
 }
@@ -82,8 +94,18 @@ function isNotValid(input, i, errorText) {
     return false;
 }
 
-function whenFocus(e) {
-    document.getElementById(`p-error-${i}`).className = 'error-hidden'
+function whenFocusName(e) {
+    pError0.className = 'error-hidden'
+    e.target.style.borderColor = '#373867';
+}
+
+function whenFocusEmail(e) {
+    pError1.className = 'error-hidden'
+    e.target.style.borderColor = '#373867';
+}
+
+function whenFocusMessage(e) {
+    pError3.className = 'error-hidden'
     e.target.style.borderColor = '#373867';
 }
 
@@ -92,6 +114,7 @@ function lastNameAndNameValidations(input, i, errorText) {
     return isNotValid(input, i, errorText);
 }
 
+// Inputs validations:
 function nameValidation() {
     return lastNameAndNameValidations(inputName, 0, pError0.textContent);
 }
@@ -101,6 +124,14 @@ function emailValidation() {
 
     if (!emailExpression.test(inputEmail.value)) return isNotValid(inputEmail, 1, pError1.textContent);
     if (emailExpression.test(inputEmail.value)) return isValid(inputEmail, 1);
+}
+
+function messageValidation() {
+    if (inputMessage.value.length > 3 &&
+        isThisStringHasOnlyNumbersOrLetters(inputMessage.value)) {
+        return isValid(inputMessage, 3)
+    }
+    else return isNotValid(inputMessage, 3, pError3.textContent)
 }
 
 function goHome() {
@@ -117,9 +148,11 @@ function goLogIn() {
 
 inputName.addEventListener('blur', nameValidation);
 inputEmail.addEventListener('blur', emailValidation);
+inputMessage.addEventListener('blur', messageValidation)
 
-inputName.addEventListener('focus', whenFocus);
-inputEmail.addEventListener('focus', whenFocus);
+inputName.addEventListener('focus', whenFocusName);
+inputEmail.addEventListener('focus', whenFocusEmail);
+inputMessage.addEventListener('focus', whenFocusMessage);
 
 liHome.addEventListener('click', goHome);
 liSignUp.addEventListener('click', goSignUp);
