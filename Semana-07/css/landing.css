@@ -1,0 +1,243 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 28.8px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    gap: 4.8px;
+    font-weight: bold;
+}
+
+form div:nth-child(3) {
+    gap: 9px;
+}
+
+form div div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    margin-left: 8px;
+}
+
+form div div label {
+    width: 40%;
+    font-weight: 500;
+}
+
+form div textarea {
+    width: 100%;
+    height: 100px;
+    padding: 3px 5px;
+    border: #373867 1px solid;
+    border-radius: 5px;
+    resize: none;
+}
+
+form div:last-child {
+    flex-direction: row;
+}
+
+input#input-name, input#input-email {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 1px #373867 solid;
+    color: #373867;
+    font-weight: 500;
+}
+
+.reasons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.reasons div {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+}
+
+.reasons div div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+}
+
+.reasons img {
+    max-width: 20%;
+    height: fit-content;
+}
+
+.btn-more {
+    width: 80px;
+    padding: 10px 24px;
+    background-color: white;
+    border: 1px rgba(241, 51, 18, 1) solid;
+    border-radius: 5px;
+    color: rgba(241, 51, 18, 1);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-more:hover {
+    background-color: rgba(241, 51, 18, 1);
+    color: rgba(55, 56, 103, 1) ;
+    transition: 0.2s;
+}
+
+.functions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.functions div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+}
+
+.list div ol {
+    list-style: none;
+}
+
+.btn-form {
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #373867;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.list div h4 {
+    margin-bottom: 6.4px;
+}
+
+#sec-reasons {
+    padding-top: 40px;
+    border-top: 2px rgba(55, 56, 103, 1) solid;
+}
+
+#btn-send {
+    width: 110px;
+    height: 33px;
+    background: #AACE9B;
+}
+
+#btn-reset {
+    width: 69.5px;
+    height: 33px;
+    background: #ee482b;
+}
+
+#btn-send:hover {
+    background-color: #4EB125;
+    transition: 0.2s;
+}
+
+#btn-reset:hover {
+    background-color: #FF2500;
+    transition: 0.2s;
+}
+
+#sec-history div div {
+    display: flex;
+    flex-direction: column;
+}
+
+#sec-history div div img {
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+#sec-history h4 {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+#sec-history div h4:last-of-type {
+    margin-top: 20px;
+}
+
+#sec-list .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    margin-left: 32px;
+}
+
+#sec-list div ol li a {
+    font-size: clamp(12.8px, 2.5vw, 16px);
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+#sec-list div ol li a:hover {
+    color: #ee482b;
+    transition: 0.2s;
+}
+
+@media only screen and (min-width: 480px) {
+    input#input-name, input#input-email {
+        width: 75%;
+    }
+
+    input#input-name, input#input-email {
+        width: 50%;
+    }
+
+    .reasons div {
+        width: 45%;
+    }
+
+    .functions div{
+        width: 45%;
+    }
+
+    .list div {
+        text-align: center;
+    }
+
+    #sec-history div div:nth-of-type(1), #sec-history div div:nth-of-type(2) {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    #sec-history div div:nth-of-type(1) img, #sec-history div div:nth-of-type(2) img {
+        max-width: 40%;
+        height: min-content;
+    }
+
+    #sec-history div div:nth-of-type(2) img {
+        order:2
+    }
+
+    #sec-list .list{
+        flex-direction: row;
+        gap: 20%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .functions {
+        gap: 48px;
+        width: 70%;
+    }
+}

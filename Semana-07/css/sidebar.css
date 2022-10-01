@@ -1,0 +1,86 @@
+aside {
+    display: none;
+}
+
+aside .container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 20%;
+    height: 100%;
+    padding: 24px;
+    background-color: #AACE9B;
+}
+
+aside .container h2 {
+    margin-bottom: 16px;
+}
+
+aside .container ul {
+    list-style:none;
+}
+
+aside .container a {
+    font-size: 19.2px;
+}
+
+aside .container nav , aside .container article{
+    display: flex;
+    flex-direction: column;
+}
+
+aside .container .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+aside .container nav ul li {
+    border-bottom: 2px rgba(55, 56, 103, 0.6) solid;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    cursor: pointer;
+}
+
+aside .container nav ul li:last-child{
+    padding-bottom: 32px;
+    padding-top: 16px;
+}
+
+aside .container nav ul li:hover a{
+    color: #FF3E1D;
+    transition: 0.2s;
+}
+
+.contact-content div {
+    display: flex;
+    flex-direction: column;
+    gap: 22.4px;
+}
+
+.contact-content div p {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 11.2px;
+    padding-bottom: 1em;
+    border-bottom: 2px rgba(55, 56, 103, 0.6) solid;
+    color: rgb(55, 56, 103);
+    font-weight: 450;
+}
+
+.contact-content div p i {
+    padding-top: 0.4em;
+    color: rgb(55, 56, 103);
+}
+
+@media (min-width:1024px) {
+    aside {
+        display: inline;
+        position: relative;
+        width: 21%;
+        height: 100%;
+        margin-right: 5px;
+    }
+}
