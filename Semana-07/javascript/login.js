@@ -5,11 +5,6 @@ var inputEmail = document.getElementById('input-email');
 var inputPassword = document.getElementById('input-password');
 var inputs = document.querySelectorAll('input');
 
-// Buttons variables:
-var liHome = document.getElementById('li-home');
-var liSignUp = document.getElementById('li-sign-up');
-var liContact = document.getElementById('li-contact');
-
 // Errors variables:
 for (var i = 0; i < 2; i++) {
     var newP = document.createElement('p');
@@ -33,14 +28,14 @@ var textAlertErrors = [
 // Validation helper functions:
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
-    input.style.borderColor = '#009400';
+    input.className = 'input-valid';
     textAlertErrors[i] = ''
     return true;
 }
 
 function isNotValid(input, i, errorText) {
-    input.style.borderColor = 'red';
-    input.nextElementSibling.classList = 'error'
+    input.className = 'input-error';
+    input.nextElementSibling.classList = 'error';
     textAlertErrors[i] = errorText;
     return false;
 }
@@ -67,13 +62,13 @@ function passwordValidation() {
         else if (charCode > 32 && charCode < 48) specialCaracters = false;
     }
 
-    if (numbers == true && letters == true && specialCaracters == true) return isValid(inputPassword, 0)
+    if (numbers && letters && specialCaracters) return isValid(inputPassword, 0)
     return isNotValid(inputPassword, 1, 'Password is wrong')
 }
 
 function whenFocus(e) {
-    e.target.nextElementSibling.className = 'error-hidden'
-    e.target.style.borderColor = '#373867';
+    e.target.nextElementSibling.className = 'error-hidden';
+    e.target.className = 'input';
 }
 
 
@@ -93,7 +88,7 @@ function buttonClick(e) {
         else if (data.errors){
             var string = ''
             for (var error of data.errors) {
-                string += error.msg + '\n'
+                string += '- ' + error.msg + '\n'
             }
             alert('Oops, something is wrong: \n' + string)
             throw new Error("There was an error with the request")
@@ -134,7 +129,4 @@ inputEmail.addEventListener('focus', whenFocus);
 inputPassword.addEventListener('focus', whenFocus);
 
 // Click events:
-liHome.addEventListener('click', goHome);
-liSignUp.addEventListener('click', goSignUp);
-liContact.addEventListener('click', goContact);
-formLogin.addEventListener('submit', buttonClick)
+formLogin.addEventListener('submit', buttonClick);

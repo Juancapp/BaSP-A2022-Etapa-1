@@ -14,12 +14,6 @@ var inputPassword = document.getElementById('input-password');
 var inputRepeat = document.getElementById('input-repeat-password');
 var inputs = document.querySelectorAll('input');
 
-// Buttons variables:
-var liHome = document.getElementById('li-home');
-var liSignUp = document.getElementById('li-sign-up');
-var liLogIn = document.getElementById('li-log-in');
-var liContact = document.getElementById('li-contact');
-
 // Errors variables:
 for (var i = 0; i < 11; i++) {
     var newP = document.createElement('p');
@@ -46,7 +40,7 @@ pError0.innerText = 'Name must contain at least 2 caracters'
 pError1.innerText = 'Last name must contain at least 2 caracters'
 pError2.innerText = 'Dni must be numeric and greater than 7'
 pError3.innerText = 'You must introduce a valid date'
-pError4.innerText = `Phone must start with '598' and contain 10 numbers`
+pError4.innerText = 'Phone must contain 10 numbers'
 pError5.innerText = 'Residence must contain first letters and then numbers'
 pError6.innerText = 'Enter a valid location'
 pError7.innerText = 'Must contain 4 to 5 numbers'
@@ -72,12 +66,12 @@ var textAlertErrors = [
 function isLetterOrSpace(a) {
     var charCode = a.charCodeAt(a);
     return (((charCode > 64 && charCode < 91)) || (charCode > 96 && charCode < 123) ||
-    (charCode > 191 && charCode < 256) || charCode == 32);
+    (charCode > 191 && charCode < 256) || charCode === 32);
 }
 
 function isThisStringHasOnlyLetters(string) {
     for (var caracter of string) {
-        if ((isLetterOrSpace(caracter) == false)) {
+        if ((isLetterOrSpace(caracter) === false)) {
             return false;
         }
     }
@@ -103,7 +97,7 @@ function isNumberOrLetter(a) {
 
 function isLetter(a) {
     var charCode = a.charCodeAt(a);
-    if(((charCode > 64 && charCode < 91)) || (charCode > 96 && charCode < 123) || charCode == 32) return true;
+    if(((charCode > 64 && charCode < 91)) || (charCode > 96 && charCode < 123) || charCode === 32) return true;
     return false;
 }
 
@@ -124,13 +118,13 @@ function letterCounter(string) {
 
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
-    input.style.borderColor = '#009400';
+    input.className = 'input-valid';
     textAlertErrors[i] = ''
     return true;
 }
 
 function isNotValid(input, i, errorText) {
-    input.style.borderColor = 'red';
+    input.className = 'input-error';
     input.nextElementSibling.classList = 'error';
     textAlertErrors[i] = errorText;
     return false;
@@ -162,8 +156,7 @@ function birdthdayValidation() {
 }
 
 function phoneValidation() {
-    if (inputPhone.value.length === 10 && isThisStringHasOnlyNumbers(inputPhone.value)
-    && inputPhone.value.substring(0, 3) === '598') return isValid(inputPhone, 4);
+    if (inputPhone.value.length === 10 && isThisStringHasOnlyNumbers(inputPhone.value)) return isValid(inputPhone, 4);
     isNotValid(inputPhone, 4, pError4.textContent);
 }
 
@@ -184,7 +177,7 @@ function locationValidation() {
 }
 
 function postalCodeValidation() {
-    if ((inputPostalCode.value.length == 4 || inputPostalCode.value.length == 5)
+    if ((inputPostalCode.value.length === 4 || inputPostalCode.value.length === 5)
     && isThisStringHasOnlyNumbers(inputPostalCode.value)) return isValid(inputPostalCode, 7);
     return isNotValid(inputPostalCode, 7, pError7.textContent);
 }
@@ -211,7 +204,7 @@ function passwordValidation() {
         else if (charCode > 32 && charCode < 48) specialCaracters = false;
     }
 
-    if (numbers == true && letters == true && specialCaracters == true) return isValid(inputPassword, 9);
+    if (numbers && letters  && specialCaracters) return isValid(inputPassword, 9);
     return isNotValid(inputPassword, 9, pError9.textContent);
 }
 
@@ -221,8 +214,8 @@ function repeatPasswordValidation() {
 }
 
 function whenFocus(e) {
-    e.target.nextElementSibling.className = 'error-hidden'
-    e.target.style.borderColor = '#373867';
+    e.target.nextElementSibling.className = 'error-hidden';
+    e.target.className = 'input';
 }
 
 // Buttons functions:
@@ -310,7 +303,3 @@ inputBirthday.addEventListener('focus', whenFocus);
 
 // Click events:
 formSignUp.addEventListener('submit', buttonClick);
-liHome.addEventListener('click', goHome);
-liSignUp.addEventListener('click', goSignUp);
-liLogIn.addEventListener('click', goLogIn);
-liContact.addEventListener('click', goContact);

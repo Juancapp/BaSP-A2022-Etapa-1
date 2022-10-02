@@ -93,6 +93,24 @@ section {
     font-size: 13px;
 }
 
+.input-error {
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: red;
+    padding: 0 5px;
+    margin-bottom: 3px;
+}
+
+.input-valid {
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: green;
+    padding: 0 5px;
+    margin-bottom: 3px;
+}
+
 .error-hidden {
     visibility: hidden;
     font-size: 13px;
