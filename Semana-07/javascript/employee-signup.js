@@ -223,11 +223,12 @@ function buttonClick(e) {
     e.preventDefault();
     var birthday = inputBirthday.value;
     var dateSplit = birthday.split('-');
+    birthday = dateSplit[1] + '/'+dateSplit[2]+ '/' + dateSplit[0];
 
     var name = inputName.value;
     var lastName = inputLastName.value;
     var DNI = inputDNI.value;
-    var birthdayNewFormat = dateSplit[1] + '/'+dateSplit[2]+ '/' + dateSplit[0];
+    var birthday;
     var phone = inputPhone.value;
     var residence = inputResidence.value;
     var location = inputLocation.value;
@@ -238,7 +239,7 @@ function buttonClick(e) {
     var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + name
     + '&lastName=' + lastName
     + '&dni=' + DNI
-    + '&dob=' + birthdayNewFormat
+    + '&dob=' + birthday
     + '&phone=' + phone
     + '&address=' + residence
     + '&city=' + location
@@ -248,16 +249,39 @@ function buttonClick(e) {
 
     fetch(url)
         .then(function(res) {
-            return res.json();
+            return res.json()
         })
         .then(function(data) {
-            if (data.success) alert('todo bien')
-            else throw new Error("There was an error with the request")
+            if (data.success) {
+                localStorage.setItem('name', name);
+                localStorage.setItem('lastName', lastName);
+                localStorage.setItem('DNI', DNI);
+                localStorage.setItem('birthday', birthday);
+                localStorage.setItem('phone', phone);
+                localStorage.setItem('residence', residence);
+                localStorage.setItem('location', location);
+                localStorage.setItem('postalCode', postalCode);
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
+                alert(data.msg)
+            }
+            else if (data.errors){
+                var string = ''
+                for (var error of data.errors) {
+                    string += '- ' + error.msg + '\n'
+                }
+                alert('Oops, something is wrong: \n' + string)
+                throw new Error("There was an error with the request")
+            }
+            else {
+                alert('Oops, something is wrong: \n' + data.msg)
+                throw new Error("There was an error with the request")
+            }
         })
-        .catch(function(error) {
+        .catch(function(error){
             console.log(error)
         })
-}
+    }
 
 // Blur events:
 inputName.addEventListener('blur', nameValidation);
@@ -287,3 +311,17 @@ inputBirthday.addEventListener('focus', whenFocus);
 
 // Click events:
 formSignUp.addEventListener('submit', buttonClick);
+
+window.addEventListener("load", function() {
+    inputName.value = localStorage.getItem('name');
+    inputLastName.value = localStorage.getItem('lastName');
+    inputDNI.value = localStorage.getItem('DNI');
+    inputBirthday.value = localStorage.getItem('birthday');
+    inputPhone.value = localStorage.getItem('phone');
+    inputResidence.value = localStorage.getItem('residence');
+    inputLocation.value = localStorage.getItem('location');
+    inputPostalCode.value = localStorage.getItem('postalCode');
+    inputEmail.value = localStorage.getItem('email');
+    inputPassword.value = localStorage.getItem('password');
+});
+
