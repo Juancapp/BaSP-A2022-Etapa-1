@@ -259,22 +259,6 @@ function buttonClick(e) {
         })
 }
 
-function goHome() {
-    window.location.href = '../views/index.html';
-}
-
-function goSignUp() {
-    window.location.href = '../views/employee-signup.html';
-}
-
-function goLogIn() {
-    window.location.href = '../views/login.html';
-}
-
-function goContact() {
-    window.location.href = '../views/index.html#sec-form';
-}
-
 // Blur events:
 inputName.addEventListener('blur', nameValidation);
 inputLastName.addEventListener('blur', lastNameValidation);
