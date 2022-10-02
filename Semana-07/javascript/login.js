@@ -89,18 +89,19 @@ function buttonClick(e) {
         return res.json()
     })
     .then(function(data) {
-        console.log(data)
-        console.log(url)
-        if(data.success) alert('Todo bien')
+        if (data.success) alert(data.msg)
         else if (data.errors){
             var string = ''
             for (var error of data.errors) {
                 string += error.msg + '\n'
             }
-            alert(string)
-            //throw new Error("There was an error with the request")
+            alert('Oops, something is wrong: \n' + string)
+            throw new Error("There was an error with the request")
         }
-        else alert(data.msg)
+        else {
+            alert('Oops, something is wrong: \n' + data.msg)
+            throw new Error("There was an error with the request")
+        }
     })
     .catch(function(error){
         console.log(error)

@@ -226,31 +226,44 @@ function whenFocus(e) {
 }
 
 // Buttons functions:
-function buttonClick() {
-    if (nameValidation() === true && lastNameValidation() === true && DNIValidation() === true && phoneValidation() === true && residenceValidation() === true &&
-        locationValidation() === true && postalCodeValidation() === true && emailValidation() === true && passwordValidation() === true &&
-        repeatPasswordValidation() === true) {
-        alert(`        Form data:
+function buttonClick(e) {
+    e.preventDefault();
+    var birthday = inputBirthday.value;
+    var dateSplit = birthday.split('-');
 
-        Name: ${inputName.value}
-        Last Name: ${inputLastName.value}
-        DNI: ${inputDNI.value}
-        Birthday: ${inputBirthday.value}
-        Phone: ${inputPhone.value}
-        Residence: ${inputResidence.value}
-        Location: ${inputLocation.value}
-        Postal Code: ${inputPostalCode.value}
-        Email: ${inputEmail.value}
-        Password: ${inputPassword.value}`)
-    } else {
-        var stringErrors = '';
-        for (var i = 0; i < textAlertErrors.length; i++) {
-            if (textAlertErrors[i] != '') {
-                stringErrors += '- ' + textAlertErrors[i] + '\n';
-            }
-        }
-        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
-    }
+    var name = inputName.value;
+    var lastName = inputLastName.value;
+    var DNI = inputDNI.value;
+    var birthdayNewFormat = dateSplit[1] + '/'+dateSplit[2]+ '/' + dateSplit[0];
+    var phone = inputPhone.value;
+    var residence = inputResidence.value;
+    var location = inputLocation.value;
+    var postalCode = inputPostalCode.value;
+    var email = inputEmail.value;
+    var password = inputPassword.value;
+
+    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup?name=' + name
+    + '&lastName=' + lastName
+    + '&dni=' + DNI
+    + '&dob=' + birthdayNewFormat
+    + '&phone=' + phone
+    + '&address=' + residence
+    + '&city=' + location
+    + '&zip=' + postalCode
+    + '&email=' + email
+    + '&password=' + password;
+
+    fetch(url)
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function(data) {
+            if (data.success) alert('todo bien')
+            else throw new Error("There was an error with the request")
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
 }
 
 function goHome() {
