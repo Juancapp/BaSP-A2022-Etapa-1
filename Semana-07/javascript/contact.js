@@ -134,18 +134,6 @@ function messageValidation() {
     else return isNotValid(inputMessage, 3, pError3.textContent)
 }
 
-function goHome() {
-    window.location.href = '#header-top';
-}
-
-function goSignUp() {
-    window.location.href = '../views/employee-signup.html';
-}
-
-function goLogIn() {
-    window.location.href = '../views/login.html';
-}
-
 inputName.addEventListener('blur', nameValidation);
 inputEmail.addEventListener('blur', emailValidation);
 inputMessage.addEventListener('blur', messageValidation)
@@ -153,7 +141,3 @@ inputMessage.addEventListener('blur', messageValidation)
 inputName.addEventListener('focus', whenFocusName);
 inputEmail.addEventListener('focus', whenFocusEmail);
 inputMessage.addEventListener('focus', whenFocusMessage);
-
-liHome.addEventListener('click', goHome);
-liSignUp.addEventListener('click', goSignUp);
-liLogIn.addEventListener('click', goLogIn);

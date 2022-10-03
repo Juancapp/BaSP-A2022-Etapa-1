@@ -71,7 +71,6 @@ function whenFocus(e) {
     e.target.className = 'input';
 }
 
-
 // Buttons functions:
 function buttonClick(e) {
 
@@ -103,23 +102,6 @@ function buttonClick(e) {
             }
         alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
     }
-}
-
-
-function goHome() {
-    window.location.href = '../views/index.html';
-}
-
-function goSignUp() {
-    window.location.href = '../views/employee-signup.html';
-}
-
-function goLogIn() {
-    window.location.href = '../views/login.html';
-}
-
-function goContact() {
-    window.location.href = '../views/index.html#sec-form';
 }
 
 // Blur events:
