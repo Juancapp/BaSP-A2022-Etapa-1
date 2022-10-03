@@ -22,6 +22,8 @@ aside .container ul {
 }
 
 aside .container a {
+    display: block;
+    width: 100%;
     font-size: 19.2px;
 }
 

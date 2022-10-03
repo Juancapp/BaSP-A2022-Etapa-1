@@ -74,33 +74,35 @@ function whenFocus(e) {
 
 // Buttons functions:
 function buttonClick(e) {
-    e.preventDefault()
-    var email = inputEmail.value;
-    var password = inputPassword.value;
-    var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email + '&password=' + password;
 
-    fetch(url)
-    .then(function(res) {
-        return res.json()
-    })
-    .then(function(data) {
-        if (data.success) alert(data.msg)
-        else if (data.errors){
-            var string = ''
-            for (var error of data.errors) {
-                string += '- ' + error.msg + '\n'
+    if (passwordValidation() && emailValidation()) {
+        e.preventDefault();
+        var email = inputEmail.value;
+        var password = inputPassword.value;
+        var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email + '&password=' + password;
+
+        fetch(url)
+            .then(function(res) {
+                return res.json()
+            })
+            .then(function(data) {
+                alert(data.msg)
+                if (data.success === false) {
+                    throw new Error("There was an error with the request");
+                }
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+    } else {
+            var stringErrors = '';
+            for (var i = 0; i < textAlertErrors.length; i++) {
+                if (textAlertErrors[i] !== '') {
+                    stringErrors += '- ' + textAlertErrors[i] + '\n';
+                }
             }
-            alert('Oops, something is wrong: \n' + string)
-            throw new Error("There was an error with the request")
-        }
-        else {
-            alert('Oops, something is wrong: \n' + data.msg)
-            throw new Error("There was an error with the request")
-        }
-    })
-    .catch(function(error){
-        console.log(error)
-    })
+        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
+    }
 }
 
 

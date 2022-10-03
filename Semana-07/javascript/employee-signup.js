@@ -265,16 +265,12 @@ function buttonClick(e) {
                 localStorage.setItem('password', password);
                 alert(data.msg)
             }
-            else if (data.errors){
+            else {
                 var string = ''
                 for (var error of data.errors) {
                     string += '- ' + error.msg + '\n'
                 }
                 alert('Oops, something is wrong: \n' + string)
-                throw new Error("There was an error with the request")
-            }
-            else {
-                alert('Oops, something is wrong: \n' + data.msg)
                 throw new Error("There was an error with the request")
             }
         })
