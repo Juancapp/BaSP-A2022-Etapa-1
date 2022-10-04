@@ -310,17 +310,9 @@ inputLocation.addEventListener('blur', locationValidation);
 inputBirthday.addEventListener('blur', birdthdayValidation);
 
 // Focus events:
-inputName.addEventListener('focus', whenFocus);
-inputLastName.addEventListener('focus', whenFocus);
-inputEmail.addEventListener('focus', whenFocus);
-inputPassword.addEventListener('focus', whenFocus);
-inputRepeat.addEventListener('focus', whenFocus);
-inputDNI.addEventListener('focus', whenFocus);
-inputPhone.addEventListener('focus', whenFocus);
-inputPostalCode.addEventListener('focus', whenFocus);
-inputResidence.addEventListener('focus', whenFocus);
-inputLocation.addEventListener('focus', whenFocus);
-inputBirthday.addEventListener('focus', whenFocus);
+for (var input of inputs) {
+    input.addEventListener('focus', whenFocus)
+}
 
 // Click events:
 formSignUp.addEventListener('submit', buttonClick);

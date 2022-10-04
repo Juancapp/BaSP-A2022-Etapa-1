@@ -118,7 +118,7 @@
   - Added Fetch Promises to Log In and Sign Up sections.
   - Requests checks the inputs of both forms.
   - Requests are only made if the Javascript validations are true.
-  - If the sign up data is valid and the request is made, this data is saved in   the Local Storage and will be added to the input value when the page is refreshed.
+  - If the sign up data is valid and the request is made, this data is saved in the Local Storage and will be added to the input value when the page is refreshed.
   - If the user and password are valid for the input but are not correct, the server will send an error message. This only applies to the Log In.
   - As long as a request is made in the sign up, the response will be successful.
 - - Technologies I've used:
@@ -127,4 +127,3 @@
   - Javascript (ES5)
 
  _By Juan Andrés Cappuccio._
-
