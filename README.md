@@ -93,7 +93,7 @@
          - HTML5
          - Javascript (ES5)
 
-### Week 04
+### Week 06
 - URL:
   - Page : https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-06/views/
   - Requirements: https://docs.google.com/document/d/1KotZSjI2ndLsVBDQJahv5Wosp1PJm5zNtmrVUsIubhg/edit#heading=h.qsfut16j32ed
@@ -109,6 +109,22 @@
   - CSS
   - Javascript (ES5)
 
+### Week 07
+- URL:
+  - Page: https://juancapp.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html
+
+- Description:
+  - I've corrected last week's errors.
+  - Added Fetch Promises to Log In and Sign Up sections.
+  - Requests checks the inputs of both forms.
+  - Requests are only made if the Javascript validations are true.
+  - If the sign up data is valid and the request is made, this data is saved in   the Local Storage and will be added to the input value when the page is refreshed.
+  - If the user and password are valid for the input but are not correct, the server will send an error message. This only applies to the Log In.
+  - As long as a request is made in the sign up, the response will be successful.
+- - Technologies I've used:
+  - HTML5
+  - CSS
+  - Javascript (ES5)
 
  _By Juan Andrés Cappuccio._
 
