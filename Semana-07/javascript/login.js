@@ -1,4 +1,4 @@
-var formLogin = document.getElementById('form-login')
+var formLogin = document.getElementById('form-login');
 
 // Input variables:
 var inputEmail = document.getElementById('input-email');
@@ -17,8 +17,8 @@ for (var i = 0; i < 2; i++) {
 var pError0 = document.getElementById('p-error-0');
 var pError1 = document.getElementById('p-error-1');
 
-pError0.textContent = 'Must be an email'
-pError1.textContent = 'Password is wrong'
+pError0.textContent = 'Must be an email';
+pError1.textContent = 'Password is wrong';
 
 var textAlertErrors = [
     pError0.textContent,
@@ -27,9 +27,9 @@ var textAlertErrors = [
 
 // Validation helper functions:
 function isValid(input, i) {
-    input.nextElementSibling.classList = 'error-hidden'
+    input.nextElementSibling.classList = 'error-hidden';
     input.className = 'input-valid';
-    textAlertErrors[i] = ''
+    textAlertErrors[i] = '';
     return true;
 }
 
@@ -48,22 +48,22 @@ function emailValidation() {
 }
 
 function passwordValidation() {
-    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 1, pError1.textContent)
-    var numbers = false
-    var letters = false
+    if (inputPassword.value.length < 8) return isNotValid(inputPassword, 1, pError1.textContent);
+    var numbers = false;
+    var letters = false;
     var specialCaracters = true;
 
     for (var i = 0; i < inputPassword.value.length; i++) {
         var element = inputPassword.value[i];
-        var charCode = element.charCodeAt(i)
-        parseElement = parseInt(element)
+        var charCode = element.charCodeAt(i);
+        parseElement = parseInt(element);
         if (isNaN(parseElement)) letters = true;
         else if (!isNaN(parseElement)) numbers = true;
         else if (charCode > 32 && charCode < 48) specialCaracters = false;
     }
 
     if (numbers && letters && specialCaracters) return isValid(inputPassword, 0)
-    return isNotValid(inputPassword, 1, 'Password is wrong')
+    return isNotValid(inputPassword, 1, 'Password is wrong');
 }
 
 function whenFocus(e) {
@@ -74,24 +74,26 @@ function whenFocus(e) {
 // Buttons functions:
 function buttonClick(e) {
 
-    if (passwordValidation() && emailValidation()) {
+    if (passwordValidation() && emailValidation() === true) {
         e.preventDefault();
         var email = inputEmail.value;
         var password = inputPassword.value;
+        alert(`        Form data:
+
+        Email: ${email}
+        Password: ${password}`);
         var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email=' + email + '&password=' + password;
 
         fetch(url)
             .then(function(res) {
-                return res.json()
+                return res.json();
             })
             .then(function(data) {
-                alert(data.msg)
-                if (data.success === false) {
-                    throw new Error("There was an error with the request");
-                }
-            })
+                alert(data.msg);
+                if (!data.success) throw new Error("There was an error with the request");
+                })
             .catch(function(error){
-                console.log(error)
+                console.log(error);
             })
     } else {
             var stringErrors = '';

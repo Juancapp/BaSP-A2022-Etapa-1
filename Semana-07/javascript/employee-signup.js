@@ -36,17 +36,17 @@ var pError9 = document.getElementById('p-error-9');
 var pError10 = document.getElementById('p-error-10');
 var pError11 = document.getElementById('p-error-11');
 
-pError0.innerText = 'Name must contain at least 2 caracters'
-pError1.innerText = 'Last name must contain at least 2 caracters'
-pError2.innerText = 'Dni must be numeric and greater than 7'
-pError3.innerText = 'You must introduce a valid date'
-pError4.innerText = 'Phone must contain 10 numbers'
-pError5.innerText = 'Residence must contain first letters and then numbers'
-pError6.innerText = 'Enter a valid location'
-pError7.innerText = 'Must contain 4 to 5 numbers'
-pError8.innerText = 'Must be an email'
-pError9.innerText = 'Password must contain at least 8 caracters and numbers'
-pError10.innerText = `Passwords don't match`
+pError0.innerText = 'Name must contain at least 2 caracters';
+pError1.innerText = 'Last name must contain at least 2 caracters';
+pError2.innerText = 'Dni must be numeric and greater than 7';
+pError3.innerText = 'You must introduce a valid date';
+pError4.innerText = 'Phone must contain 10 numbers';
+pError5.innerText = 'Residence must contain first letters and then numbers';
+pError6.innerText = 'Enter a valid location';
+pError7.innerText = 'Must contain 4 to 5 numbers';
+pError8.innerText = 'Must be an email';
+pError9.innerText = 'Password must contain at least 8 caracters and numbers';
+pError10.innerText = `Passwords don't match`;
 
 var textAlertErrors = [
     pError0.textContent,
@@ -119,7 +119,7 @@ function letterCounter(string) {
 function isValid(input, i) {
     input.nextElementSibling.classList = 'error-hidden'
     input.className = 'input-valid';
-    textAlertErrors[i] = ''
+    textAlertErrors[i] = '';
     return true;
 }
 
@@ -228,7 +228,6 @@ function buttonClick(e) {
     var name = inputName.value;
     var lastName = inputLastName.value;
     var DNI = inputDNI.value;
-    var birthday;
     var phone = inputPhone.value;
     var residence = inputResidence.value;
     var location = inputLocation.value;
@@ -247,37 +246,55 @@ function buttonClick(e) {
     + '&email=' + email
     + '&password=' + password;
 
-    fetch(url)
-        .then(function(res) {
-            return res.json()
-        })
-        .then(function(data) {
-            if (data.success) {
-                localStorage.setItem('name', name);
-                localStorage.setItem('lastName', lastName);
-                localStorage.setItem('DNI', DNI);
-                localStorage.setItem('birthday', birthday);
-                localStorage.setItem('phone', phone);
-                localStorage.setItem('residence', residence);
-                localStorage.setItem('location', location);
-                localStorage.setItem('postalCode', postalCode);
-                localStorage.setItem('email', email);
-                localStorage.setItem('password', password);
-                alert(data.msg)
-            }
-            else {
-                var string = ''
-                for (var error of data.errors) {
-                    string += '- ' + error.msg + '\n'
+    if (nameValidation() && lastNameValidation && DNIValidation() && birdthdayValidation() && phoneValidation()
+    && residenceValidation() && locationValidation() && postalCodeValidation() && emailValidation()
+    && passwordValidation() && repeatPasswordValidation() === true) {
+        alert(`        Form data:
+
+        Name: ${name}
+        Last Name: ${lastName}
+        DNI: ${DNI}
+        Birthday: ${inputBirthday.value}
+        Phone: ${phone}
+        Residence: ${residence}
+        Location: ${location}
+        Postal Code: ${postalCode}
+        Email: ${email}
+        Password: ${password}`)
+
+        fetch(url)
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(data) {
+                if (data.success) {
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('lastName', lastName);
+                    localStorage.setItem('DNI', DNI);
+                    localStorage.setItem('birthday', inputBirthday.value);
+                    localStorage.setItem('phone', phone);
+                    localStorage.setItem('residence', residence);
+                    localStorage.setItem('location', location);
+                    localStorage.setItem('postalCode', postalCode);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+                    alert(data.msg);
                 }
-                alert('Oops, something is wrong: \n' + string)
-                throw new Error("There was an error with the request")
+                else throw new Error("There was an error with the request");
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+    } else {
+        var stringErrors = '';
+            for (var i = 0; i < textAlertErrors.length; i++) {
+                if (textAlertErrors[i] !== '') {
+                    stringErrors += '- ' + textAlertErrors[i] + '\n';
+                }
             }
-        })
-        .catch(function(error){
-            console.log(error)
-        })
+        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
     }
+}
 
 // Blur events:
 inputName.addEventListener('blur', nameValidation);
@@ -320,4 +337,3 @@ window.addEventListener("load", function() {
     inputEmail.value = localStorage.getItem('email');
     inputPassword.value = localStorage.getItem('password');
 });
-
