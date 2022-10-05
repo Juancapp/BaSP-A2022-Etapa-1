@@ -1,4 +1,8 @@
 var formLogin = document.getElementById('form-login');
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+var modalP = document.getElementById('modal-p');
+
 
 // Input variables:
 var inputEmail = document.getElementById('input-email');
@@ -71,9 +75,13 @@ function whenFocus(e) {
     e.target.className = 'input';
 }
 
+function getModal(text) {
+    modalP.innerHTML = text;
+    modal.style.display = "block";
+}
+
 // Buttons functions:
 function buttonClick(e) {
-
     if (passwordValidation() && emailValidation() === true) {
         e.preventDefault();
         var email = inputEmail.value;
@@ -89,7 +97,7 @@ function buttonClick(e) {
                 return res.json();
             })
             .then(function(data) {
-                alert(data.msg);
+                getModal(data.msg);
                 if (!data.success) throw new Error("There was an error with the request");
                 })
             .catch(function(error){
@@ -99,10 +107,10 @@ function buttonClick(e) {
             var stringErrors = '';
             for (var i = 0; i < textAlertErrors.length; i++) {
                 if (textAlertErrors[i] !== '') {
-                    stringErrors += '- ' + textAlertErrors[i] + '\n';
+                    stringErrors += '<p>- ' + textAlertErrors[i] + '</p>';
                 }
             }
-        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
+        getModal('<div class="div-bold">Oops! Something is wrong. Correct the following errors: </div>' + stringErrors);
     }
 }
 
@@ -116,3 +124,12 @@ inputPassword.addEventListener('focus', whenFocus);
 
 // Click events:
 formLogin.addEventListener('submit', buttonClick);
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+}

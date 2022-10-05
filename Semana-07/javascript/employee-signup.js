@@ -310,8 +310,9 @@ inputLocation.addEventListener('blur', locationValidation);
 inputBirthday.addEventListener('blur', birdthdayValidation);
 
 // Focus events:
-for (var input of inputs) {
-    input.addEventListener('focus', whenFocus)
+for (var i = 0; i < inputs.length -1; i++) {
+    var input = inputs[i];
+    input.addEventListener('focus', whenFocus);
 }
 
 // Click events:
