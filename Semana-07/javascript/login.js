@@ -77,7 +77,7 @@ function whenFocus(e) {
 
 function getModal(text) {
     modalP.innerHTML = text;
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 // Buttons functions:
@@ -101,7 +101,7 @@ function buttonClick(e) {
                 if (!data.success) throw new Error("There was an error with the request");
                 })
             .catch(function(error){
-                console.log(error);
+                getModal(error);
             })
     } else {
             var stringErrors = '';

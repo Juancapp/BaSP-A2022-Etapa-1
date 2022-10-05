@@ -1,4 +1,8 @@
 var formSignUp = document.getElementById('form-sign-up');
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+var modalP = document.getElementById('modal-p');
+
 
 // Input variables:
 var inputName = document.getElementById('input-name');
@@ -190,6 +194,15 @@ function emailValidation() {
 }
 
 function passwordValidation() {
+    if (inputRepeat.value === inputPassword.value) {
+        inputRepeat.nextElementSibling.classList = 'error-hidden'
+        inputRepeat.className = 'input-valid';
+        textAlertErrors[i + 1] = '';
+    } else {
+        inputRepeat.className = 'input-error';
+        inputRepeat.nextElementSibling.classList = 'error';
+        textAlertErrors[i + 1] = pError10.textContent;
+    }
     if (inputPassword.value.length < 8) return isNotValid(inputPassword, 9, pError9.textContent);
     var numbers = false;
     var letters = false;
@@ -217,6 +230,12 @@ function whenFocus(e) {
     e.target.nextElementSibling.className = 'error-hidden';
     e.target.className = 'input';
 }
+
+function getModal(text) {
+    modalP.innerHTML = text;
+    modal.style.display = "flex";
+}
+
 
 // Buttons functions:
 function buttonClick(e) {
@@ -278,7 +297,7 @@ function buttonClick(e) {
                     localStorage.setItem('postalCode', postalCode);
                     localStorage.setItem('email', email);
                     localStorage.setItem('password', password);
-                    alert(data.msg);
+                    getModal(data.msg);
                 }
                 else throw new Error("There was an error with the request");
             })
@@ -289,10 +308,10 @@ function buttonClick(e) {
         var stringErrors = '';
             for (var i = 0; i < textAlertErrors.length; i++) {
                 if (textAlertErrors[i] !== '') {
-                    stringErrors += '- ' + textAlertErrors[i] + '\n';
+                    stringErrors += '<p>- ' + textAlertErrors[i] + '</p>';
                 }
             }
-        alert('Oops! Something is wrong.' + '\n' +  'Correct the following errors:' + '\n' + '\n' +stringErrors);
+        getModal('<div class="div-bold">Oops! Something is wrong. Correct the following errors: </div>' + stringErrors);
     }
 }
 
@@ -317,6 +336,9 @@ for (var i = 0; i < inputs.length -1; i++) {
 
 // Click events:
 formSignUp.addEventListener('submit', buttonClick);
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
 window.addEventListener("load", function() {
     inputName.value = localStorage.getItem('name');
@@ -330,3 +352,9 @@ window.addEventListener("load", function() {
     inputEmail.value = localStorage.getItem('email');
     inputPassword.value = localStorage.getItem('password');
 });
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+}
